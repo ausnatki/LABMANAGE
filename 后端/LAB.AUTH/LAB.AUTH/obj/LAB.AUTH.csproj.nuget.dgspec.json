@@ -1,0 +1,326 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH\\LAB.AUTH.csproj": {}
+  },
+  "projects": {
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj",
+        "projectName": "LAB.AUTH.DataAccessor",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj",
+        "projectName": "LAB.AUTH.Models",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj",
+        "projectName": "LAB.AUTH.Server",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj"
+              },
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "jose-jwt": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH\\LAB.AUTH.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH\\LAB.AUTH.csproj",
+        "projectName": "LAB.AUTH",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH\\LAB.AUTH.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj"
+              },
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj"
+              },
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.AUTH\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Consul": {
+              "target": "Package",
+              "version": "[1.7.14.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

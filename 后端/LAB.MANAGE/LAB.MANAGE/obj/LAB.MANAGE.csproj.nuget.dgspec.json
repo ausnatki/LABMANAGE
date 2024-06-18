@@ -1,0 +1,272 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MANAGE\\LAB.MANAGE.csproj": {}
+  },
+  "projects": {
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\LAB.DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\LAB.DB.csproj",
+        "projectName": "LAB.DB",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\LAB.DB.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MANAGE\\LAB.MANAGE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MANAGE\\LAB.MANAGE.csproj",
+        "projectName": "LAB.MANAGE",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MANAGE\\LAB.MANAGE.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MANAGE\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\LAB.DB.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.DB\\LAB.DB.csproj"
+              },
+              "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj": {
+                "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Consul": {
+              "target": "Package",
+              "version": "[1.7.14.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.33, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj",
+        "projectName": "LAB.MODEL",
+        "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj",
+        "packagesPath": "C:\\Users\\KKK\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\电脑软件\\VCStudio\\Share\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\KKK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

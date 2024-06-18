@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F6099CA-909F-46F1-B861-938AB602A708}|..\\LAB.DB\\LAB.DB.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.db\\labcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\consulconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:consulconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LabContext.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.DB\\LabContext.cs",
+              "RelativeDocumentMoniker": "..\\LAB.DB\\LabContext.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.DB\\LabContext.cs",
+              "RelativeToolTip": "..\\LAB.DB\\LabContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:00:48.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-18T16:00:42.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:00:06.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ImageController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "Controllers\\ImageController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T15:59:39.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConsulConfiguration.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\ConsulConfiguration.cs",
+              "RelativeDocumentMoniker": "ConsulConfiguration.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\ConsulConfiguration.cs",
+              "RelativeToolTip": "ConsulConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T15:56:51.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HeathCheckController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HeathCheckController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HeathCheckController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HeathCheckController.cs",
+              "RelativeToolTip": "Controllers\\HeathCheckController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T15:56:12.882Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
