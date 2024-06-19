@@ -39,8 +39,7 @@
               "RelativeToolTip": "..\\LAB.AUTH.DataAccessor\\AuthContext.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAIwCcAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T01:32:40.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T01:32:40.537Z"
             },
             {
               "$type": "Document",
@@ -52,8 +51,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T16:27:19.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T16:27:19.706Z"
             },
             {
               "$type": "Document",
@@ -75,7 +73,7 @@
               "RelativeDocumentMoniker": "..\\LAB.AUTH.Server\\LoginServiceImp.cs",
               "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.Server\\LoginServiceImp.cs",
               "RelativeToolTip": "..\\LAB.AUTH.Server\\LoginServiceImp.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAcwE0AAAAMAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAuwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T16:24:27.795Z",
               "EditorCaption": ""
@@ -90,8 +88,7 @@
               "RelativeToolTip": "..\\LAB.AUTH.Models\\SysUser.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAuwBMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T16:24:07.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T16:24:07.486Z"
             }
           ]
         }

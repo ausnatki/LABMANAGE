@@ -100,6 +100,15 @@ namespace LAB.DB
 
             });
 
+            modelBuilder.Entity<LAB.MODEL.SingleBuilding>(entity =>
+            {
+                entity.HasKey(c => c.Id);
+            });
+            modelBuilder.Entity<LAB.MODEL.Floor>(entity =>
+            {
+                entity.HasKey(c => c.Id);
+            });
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -116,5 +125,8 @@ namespace LAB.DB
         public Microsoft.EntityFrameworkCore.DbSet<LAB.MODEL.Semesters> Semesters { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<LAB.MODEL.SysUser> SysUsers {  get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<LAB.MODEL.UserRoles> UserRoles { get; set; }
+
+        public Microsoft.EntityFrameworkCore.DbSet<LAB.MODEL.Floor> Floor { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<LAB.MODEL.SingleBuilding> SingleBuilding { get; set; }
     }
 }

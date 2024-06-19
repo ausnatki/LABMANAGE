@@ -11,5 +11,6 @@ namespace LAB.MODEL
         public int Id { get; set; }
         public string? Name { get; set; }
         public bool IsDel { get; set; }
+        public int Number {  get; set; }
     }
 }

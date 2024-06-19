@@ -36,6 +36,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<LAB.SERVERS.ISysUserService, LAB.SERVERS.SysUserServiceImp>();
 builder.Services.AddScoped<LAB.SERVERS.IAcademyService,LAB.SERVERS.AcademyServiceImp>();
 builder.Services.AddScoped<LAB.SERVERS.ISemesteresService,LAB.SERVERS.SemesteresServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.ILaboratoriesService,LAB.SERVERS.LaboratoriesServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IFloorService,LAB.SERVERS.FloorServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IBuilderService,LAB.SERVERS.BuilderServiceImp>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_builder>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_floor>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_laboratories>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_academy>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_semesteres>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_sysuser>();
