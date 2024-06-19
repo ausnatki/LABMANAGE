@@ -11,6 +11,8 @@
           "Consul": "1.7.14.3",
           "LAB.DB": "1.0.0",
           "LAB.MODEL": "1.0.0",
+          "LAB.REPOSITORY": "1.0.0",
+          "LAB.SERVERS": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
           "RabbitMQ.Client": "6.8.1",
@@ -554,6 +556,25 @@
         "runtime": {
           "LAB.MODEL.dll": {}
         }
+      },
+      "LAB.REPOSITORY/1.0.0": {
+        "dependencies": {
+          "LAB.DB": "1.0.0",
+          "LAB.MODEL": "1.0.0"
+        },
+        "runtime": {
+          "LAB.REPOSITORY.dll": {}
+        }
+      },
+      "LAB.SERVERS/1.0.0": {
+        "dependencies": {
+          "LAB.DB": "1.0.0",
+          "LAB.MODEL": "1.0.0",
+          "LAB.REPOSITORY": "1.0.0"
+        },
+        "runtime": {
+          "LAB.SERVERS.dll": {}
+        }
       }
     }
   },
@@ -954,6 +975,16 @@
       "sha512": ""
     },
     "LAB.MODEL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LAB.REPOSITORY/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LAB.SERVERS/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

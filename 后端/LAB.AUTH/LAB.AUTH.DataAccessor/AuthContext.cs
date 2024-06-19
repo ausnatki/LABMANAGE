@@ -36,6 +36,7 @@ namespace LAB.AUTH.DataAccessor
             modelBuilder.Entity<LAB.AUTH.Models.SysUser>(entity =>
             {
                 entity.HasKey(c => c.Id);
+                entity.HasOne(c => c.Academy).WithMany(c => c.sysUsers).HasForeignKey(c => c.CID);
             });
 
             modelBuilder.Entity<LAB.AUTH.Models.Roles>(entity =>
@@ -95,7 +96,7 @@ namespace LAB.AUTH.DataAccessor
             modelBuilder.Entity<LAB.AUTH.Models.Academy>(entity =>
             {
                 entity.HasKey(c => c.Id);
-
+               
 
             });
 

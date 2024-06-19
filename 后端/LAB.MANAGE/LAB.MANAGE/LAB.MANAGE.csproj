@@ -18,6 +18,8 @@
   <ItemGroup>
     <ProjectReference Include="..\LAB.DB\LAB.DB.csproj" />
     <ProjectReference Include="..\LAB.MODEL\LAB.MODEL.csproj" />
+    <ProjectReference Include="..\LAB.REPOSITORY\LAB.REPOSITORY.csproj" />
+    <ProjectReference Include="..\LAB.SERVERS\LAB.SERVERS.csproj" />
   </ItemGroup>
 
 </Project>

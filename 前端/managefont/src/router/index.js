@@ -135,7 +135,7 @@ export const asyncRoutes = [
     name: 'GoodManage',
     meta: {
       title: '商品管理',
-      icon: 'shopping',
+      icon: 'guide',
       roles: ['admin', 'editor']
     },
     children: [{
@@ -158,6 +158,124 @@ export const asyncRoutes = [
         icon: 'guide',
         noCache: true,
         roles: ['admin']
+      }
+    }
+    ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/list',
+    alwaysShow: true,
+    name: 'GoodManage',
+    meta: {
+      title: '用户管理',
+      icon: 'guide',
+      roles: ['admin', 'editor']
+    },
+    children: [{
+      path: 'list',
+      component: () => import('@/views/user/index.vue'),
+      name: 'acadmeyList',
+      meta: {
+        title: '用户列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    }
+    ]
+  },
+  {
+    path: '/academy',
+    component: Layout,
+    redirect: '/user/list',
+    alwaysShow: true,
+    name: 'GoodManage',
+    meta: {
+      title: '学院管理',
+      icon: 'guide',
+      roles: ['admin', 'editor']
+    },
+    children: [{
+      path: 'list',
+      component: () => import('@/views/academy/index.vue'),
+      name: 'acadmeyList',
+      meta: {
+        title: '学院列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    }
+    ]
+  },
+  {
+    path: '/semesteres',
+    component: Layout,
+    redirect: '/semesteres/list',
+    alwaysShow: true,
+    name: 'GoodManage',
+    meta: {
+      title: '学期管理',
+      icon: 'guide',
+      roles: ['admin', 'editor']
+    },
+    children: [{
+      path: 'list',
+      component: () => import('@/views/semesteres/index.vue'),
+      name: 'acadmeyList',
+      meta: {
+        title: '学期列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    }
+    ]
+  },
+  {
+    path: '/builder',
+    component: Layout,
+    redirect: '/builder/list',
+    alwaysShow: true,
+    name: 'GoodManage',
+    meta: {
+      title: '楼房管理',
+      icon: 'guide',
+      roles: ['admin', 'editor']
+    },
+    children: [{
+      path: 'builderlist',
+      component: () => import('@/views/builder/index.vue'),
+      name: 'builderList',
+      meta: {
+        title: '楼房列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    },
+    {
+      path: 'floorlist',
+      component: () => import('@/views/floor/index.vue'),
+      name: 'builderList',
+      meta: {
+        title: '楼层列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    },
+    {
+      path: 'lablist',
+      component: () => import('@/views/laboratories/index.vue'),
+      name: 'laboratoriesList',
+      meta: {
+        title: '实验室列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
       }
     }
     ]

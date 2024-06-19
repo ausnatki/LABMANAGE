@@ -29,7 +29,7 @@ namespace LAB.MODEL
         public string? OtherHazards { get; set; } //其他安全隐患
         public string? OtherSafetyHazards { get; set; } //仪器设配其他安全隐患
         public bool IsDel { get; set; }
-
+        public bool State {  get; set; }
 
         public LAB.MODEL.SysUser? SysUser {  get; set; }
         public LAB.MODEL.Laboratories? Laboratories { get; set; }

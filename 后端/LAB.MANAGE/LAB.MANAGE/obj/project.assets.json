@@ -983,6 +983,35 @@
         "runtime": {
           "bin/placeholder/LAB.MODEL.dll": {}
         }
+      },
+      "LAB.REPOSITORY/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LAB.DB": "1.0.0",
+          "LAB.MODEL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LAB.REPOSITORY.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LAB.REPOSITORY.dll": {}
+        }
+      },
+      "LAB.SERVERS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LAB.DB": "1.0.0",
+          "LAB.MODEL": "1.0.0",
+          "LAB.REPOSITORY": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LAB.SERVERS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LAB.SERVERS.dll": {}
+        }
       }
     }
   },
@@ -2702,6 +2731,16 @@
       "type": "project",
       "path": "../LAB.MODEL/LAB.MODEL.csproj",
       "msbuildProject": "../LAB.MODEL/LAB.MODEL.csproj"
+    },
+    "LAB.REPOSITORY/1.0.0": {
+      "type": "project",
+      "path": "../LAB.REPOSITORY/LAB.REPOSITORY.csproj",
+      "msbuildProject": "../LAB.REPOSITORY/LAB.REPOSITORY.csproj"
+    },
+    "LAB.SERVERS/1.0.0": {
+      "type": "project",
+      "path": "../LAB.SERVERS/LAB.SERVERS.csproj",
+      "msbuildProject": "../LAB.SERVERS/LAB.SERVERS.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2709,6 +2748,8 @@
       "Consul >= 1.7.14.3",
       "LAB.DB >= 1.0.0",
       "LAB.MODEL >= 1.0.0",
+      "LAB.REPOSITORY >= 1.0.0",
+      "LAB.SERVERS >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "RabbitMQ.Client >= 6.8.1",
@@ -2753,6 +2794,12 @@
             },
             "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj": {
               "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.MODEL\\LAB.MODEL.csproj"
+            },
+            "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj": {
+              "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj"
+            },
+            "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.SERVERS\\LAB.SERVERS.csproj": {
+              "projectPath": "D:\\git\\lab\\LABMANAGE\\后端\\LAB.MANAGE\\LAB.SERVERS\\LAB.SERVERS.csproj"
             }
           }
         }

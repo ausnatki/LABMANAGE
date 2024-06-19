@@ -3,22 +3,21 @@
   "WorkspaceRootPath": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4293C6EC-BA00-4CF1-9BB2-290C0482159B}|..\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth.server\\loginserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329EB256-158E-42B5-935E-6FF9AA2C21A8}|..\\LAB.AUTH.DataAccessor\\LAB.AUTH.DataAccessor.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth.dataaccessor\\authcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A12BDB5A-6AE4-4363-8E77-6CEDED30A145}|..\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth.models\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth\\controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|solutionrelative:controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2D0D67C1-9AC0-4C0B-BDF7-686860817FF2}|LAB.AUTH.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4293C6EC-BA00-4CF1-9BB2-290C0482159B}|..\\LAB.AUTH.Server\\LAB.AUTH.Server.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth.server\\loginserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A12BDB5A-6AE4-4363-8E77-6CEDED30A145}|..\\LAB.AUTH.Models\\LAB.AUTH.Models.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.auth\\lab.auth.models\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,11 +27,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "AuthContext.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.DataAccessor\\AuthContext.cs",
+              "RelativeDocumentMoniker": "..\\LAB.AUTH.DataAccessor\\AuthContext.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.DataAccessor\\AuthContext.cs",
+              "RelativeToolTip": "..\\LAB.AUTH.DataAccessor\\AuthContext.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAIwCcAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T01:32:40.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -45,20 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-18T16:25:49.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "HeathCheckController.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH\\Controllers\\HeathCheckController.cs",
               "RelativeDocumentMoniker": "Controllers\\HeathCheckController.cs",
@@ -66,25 +65,24 @@
               "RelativeToolTip": "Controllers\\HeathCheckController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T16:25:10.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T16:25:10.089Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "LoginServiceImp.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.Server\\LoginServiceImp.cs",
               "RelativeDocumentMoniker": "..\\LAB.AUTH.Server\\LoginServiceImp.cs",
               "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.Server\\LoginServiceImp.cs",
               "RelativeToolTip": "..\\LAB.AUTH.Server\\LoginServiceImp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAlAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwE0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T16:24:27.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "SysUser.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.AUTH\\LAB.AUTH.Models\\SysUser.cs",
               "RelativeDocumentMoniker": "..\\LAB.AUTH.Models\\SysUser.cs",

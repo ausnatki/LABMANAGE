@@ -55,7 +55,7 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.0, )"
             },
             "Ocelot": {
               "target": "Package",
@@ -63,11 +63,11 @@
             },
             "Ocelot.Provider.Consul": {
               "target": "Package",
-              "version": "[23.3.3, )"
+              "version": "[22.0.0, )"
             },
             "Ocelot.Provider.Polly": {
               "target": "Package",
-              "version": "[23.3.3, )"
+              "version": "[23.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

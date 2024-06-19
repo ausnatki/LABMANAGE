@@ -1,4 +1,5 @@
 using LAB.MANAGE;
+using LAB.MODEL;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,7 +32,14 @@ builder.Services.AddCors(options =>
         });
 });
 
-// 这里书注册服务的地方
+// 这里注册服务的地方
+builder.Services.AddScoped<LAB.SERVERS.ISysUserService, LAB.SERVERS.SysUserServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IAcademyService,LAB.SERVERS.AcademyServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.ISemesteresService,LAB.SERVERS.SemesteresServiceImp>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_academy>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_semesteres>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_sysuser>();
+
 
 
 // 获取appsettings.json文件中配置认证中密钥（Secret）跟受众（Aud）信息

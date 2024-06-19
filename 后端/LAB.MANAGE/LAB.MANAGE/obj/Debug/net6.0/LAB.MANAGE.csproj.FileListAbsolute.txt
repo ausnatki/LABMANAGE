@@ -143,3 +143,7 @@ D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\obj\Debug\net6.0\refint\LAB.MA
 D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\obj\Debug\net6.0\LAB.MANAGE.pdb
 D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\obj\Debug\net6.0\LAB.MANAGE.genruntimeconfig.cache
 D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\obj\Debug\net6.0\ref\LAB.MANAGE.dll
+D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\bin\Debug\net6.0\LAB.REPOSITORY.dll
+D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\bin\Debug\net6.0\LAB.SERVERS.dll
+D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\bin\Debug\net6.0\LAB.REPOSITORY.pdb
+D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MANAGE\bin\Debug\net6.0\LAB.SERVERS.pdb
