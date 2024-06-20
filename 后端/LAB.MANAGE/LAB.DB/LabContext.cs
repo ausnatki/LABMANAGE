@@ -37,6 +37,7 @@ namespace LAB.DB
             modelBuilder.Entity<LAB.MODEL.SysUser>(entity =>
             {
                 entity.HasKey(c => c.Id);
+                entity.HasOne(c => c.Academy).WithMany(c => c.sysUsers).HasForeignKey(c => c.CID);
             });
 
             modelBuilder.Entity<LAB.MODEL.Roles>(entity =>
@@ -59,7 +60,7 @@ namespace LAB.DB
             modelBuilder.Entity<LAB.MODEL.Laboratories>(entity =>
             {
                 entity.HasKey(c => c.Id);
-                entity.HasOne(c => c.Academy).WithMany(c => c.laboratories).HasForeignKey(c => c.AcademyId);
+                //entity.HasOne(c => c.Academy).WithMany(c => c.laboratories).HasForeignKey(c => c.AcademyId);
             });
 
             modelBuilder.Entity<LAB.MODEL.LabInclidentHanding>(entity =>
@@ -96,8 +97,6 @@ namespace LAB.DB
             modelBuilder.Entity<LAB.MODEL.Academy>(entity =>
             {
                 entity.HasKey(c => c.Id);
-
-
             });
 
             modelBuilder.Entity<LAB.MODEL.SingleBuilding>(entity =>

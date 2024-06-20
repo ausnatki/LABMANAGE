@@ -1,31 +1,13 @@
 <template>
   <div class="my-box">
     <!-- 这里是通过图书名查询 -->
-    <el-input v-model="serchBookname" placeholder="图书名" style="width:200px;padding:0 10px 10px 0" />
-    <el-button type="primary" @click="ClickSerchBookName">搜索</el-button>
-
-    <!-- 这里是我的多选框的部分 -->
-    <el-select
-      v-model="serchCategory"
-      multiple
-      collapse-tags
-      style="margin-left: 20px;"
-      placeholder="请选择"
-    >
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-      />
-    </el-select>
-
-    <!-- 添加用户信息 -->
-    <el-button type="warning" style="margin-left:20px" @click="ClickAdd()">添加学期名</el-button>
+    <el-input v-model="serchname" placeholder="图书名" style="width:200px;padding:0 10px 10px 0" />
+    <el-button type="primary" @click="ClickSerchName">搜索</el-button>
 
     <!-- 表格部分 -->
     <el-table
-      :data="tableData"
+      v-loading="isLoading"
+      :data="filteredData"
       border
       style="width: 100%"
     >
@@ -33,13 +15,38 @@
         label="编号"
       >
         <template slot-scope="scope">
-          {{ scope.$index+1 }}
+          {{ scope.$index+1+(currentPage-1)*pageSize }}
         </template>
       </el-table-column>
       <el-table-column
-        prop="name"
-        label="姓名"
-      />
+        prop="number"
+        label="实验室编号"
+      >
+        <template slot-scope="scope">
+          <el-tag>{{ scope.row.number }}</el-tag>
+        </template>
+      </el-table-column>
+
+      <el-table-column
+        prop="builder"
+        label="所属楼层"
+      >
+        <template slot-scope="scope">
+          <el-tag>{{ scope.row.builder }}</el-tag>
+        </template>
+      </el-table-column>
+
+      <el-table-column
+        prop="count"
+        label="楼层数实验室数量"
+        width="150"
+      >
+        <template slot-scope="scope">
+          <el-input :value="scope.row.count" readonly>
+            <template slot="append">间</template>
+          </el-input>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="isDel"
         label="是否启用"
@@ -49,6 +56,7 @@
             v-model="scope.row.isDel"
             active-color="#13ce66"
             inactive-color="#ff4949"
+            @change="changeState(scope.row.id)"
           />
         </template>
       </el-table-column>
@@ -56,7 +64,8 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-link type="primary" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row.id)">修改</el-link>
+          <el-link type="primary" style="margin-right:10px" @click="ClickAdd(scope.row)">添加实验室</el-link>
+          <el-link type="success" style="margin-right:10px" @click="ClickView(scope.row.id)">查看实验室</el-link>
         </template>
       </el-table-column>
 
@@ -79,90 +88,154 @@
       title="提示"
       :visible.sync="dialogAdd"
       width="30%"
-      :before-close="handleClose"
     >
-      <AddDialog />
+      <template v-if="dialogAdd">
+        <AddDialog :dialogdata.sync="dialogData" />
+      </template>
     </el-dialog>
 
-    <!-- 修改弹出层 -->
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogEdit"
-      width="30%"
-      :before-close="handleClose"
-    >
-      <EditDialog />
+    <!-- 对应楼层实验室表格 -->
+    <el-dialog v-loading="isdLoading" title="收货地址" :visible.sync="dialogView">
+      <el-table :data="gridData">
+        <el-table-column type="index" label="编号" />
+        <el-table-column property="name" label="名称" />
+        <el-table-column property="academy" label="所属学院" />
+        <el-table-column property="managerName" label="管理人员" />
+        <el-table-column property="isDel" label="状态"><template slot-scope="scope">{{ StateText(scope.row.isDel) }}</template></el-table-column>
+      </el-table>
     </el-dialog>
+
   </div>
 </template>
 
 <script>
-import EditDialog from '@/views/semesteres/components/editDialog.vue'
-import AddDialog from '@/views/semesteres/components/addDialog.vue'
+import { GetList, ChangeState } from '@/api/floor.js'
+import AddDialog from '@/views/floor/components/addDialog.vue'
+import { GetByFloor } from '@/api/laboratories'
 export default {
   name: 'FloorPage',
   components: {
-    AddDialog,
-    EditDialog
+    AddDialog
   },
   data() {
     return {
-      tableData: [{
-        id: '1',
-        name: '2022-2023学期',
-        isDel: true
-      }],
-      serchBookname: '',
-      tserchBookname: '',
-      serchBookauth: '',
-      tserchBookauth: '',
+      tableData: [],
+      isLoading: true,
+      serchname: '',
+      tserchname: '',
+      isdLoading: true,
       dialogAdd: false,
-      dialogEdit: false
+      dialogView: false,
+      currentPage: 1, // 当前页码
+      total: 20, // 总条数
+      pageSize: 10, // 每页的数据条数
+      dialogData: {},
+      gridData: []
     }
   },
   computed: {
     filteredData() {
       // console.log(this.tableData)
       let filtered = this.tableData
-      const bookname = this.tserchBookname
-      const auth = this.tserchBookauth
-      const category = this.serchCategory
-      // filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+      const name = this.tserchname
+
+      filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
 
       // console.log(category.length)
       // 判断是否有值
-      if (bookname) {
-        console.log('进行我的图书查询')
+      if (name) {
+        // console.log('进行我的图书查询')
         filtered = filtered.filter(item => {
-          return item.bookName.includes(bookname)
+          return item.builder.includes(name)
         })
       }
-      // console.log(filtered)
-      if (auth) {
-        console.log('进行我的作者查询')
-        filtered = filtered.filter(item => {
-          return item.author.includes(auth)
-        })
-      }
-      // console.log(filtered)
-      if (category.length) {
-        console.log('进行我的类别查询')
-        filtered = filtered.filter(item => {
-          return category.includes(item.category)
-        })
-      }
-      // console.log(filtered)
-      return filtered
+
+      return filtered.map(item => ({
+        ...item,
+        isDel: !item.isDel // 取反
+      }))
+      // return filtered
     }
   },
+  mounted() {
+    this.InitData()
+  },
   methods: {
+    // 初始化数据
+    async InitData() {
+      this.isLoading = true
+      await GetList().then(result => {
+        this.tableData = result.data
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      }).finally(() => {
+        this.isLoading = false
+      })
+    },
+    // 搜索
+    ClickSerchName() {
+      this.tserchname = this.serchname
+    },
     // 点击添加
-    ClickAdd() {
+    ClickAdd(data) {
+      this.dialogData = data
       this.dialogAdd = true
     },
-    // 点击修改
-    ClickEdit(UID) {
-      this.dialogEdit = true
+    // 点击状态开关的选项
+    changeState(FID) {
+      this.ButtonLoading = true
+      ChangeState(FID).then(result => {
+        this.$message({
+          type: 'success',
+          message: result.msg
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        })
+      }).finally(() => {
+
+      })
+    },
+    // 点击查看
+    async ClickView(FID) {
+      this.dialogView = true
+      this.isdLoading = true
+      await GetByFloor(FID).then(result => {
+        this.gridData = result.data
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: '查询列表失败'
+        })
+      }).finally(() => {
+        this.isdLoading = false
+      })
+    },
+    StateText(state) {
+      switch (state) {
+        case true:
+          return '停用'
+        case false:
+          return '启用'
+        default:
+          return '未知'
+      }
+    },
+    // 每页条数改变时触发 选择一页显示多少行
+    handleSizeChange(val) {
+      // console.log(`每页 ${val} 条`)
+      this.currentPage = 1
+      this.pageSize = val
+    },
+    // 当前页改变时触发 跳转其他页
+    handleCurrentChange(val) {
+      // console.log(`当前页: ${val}`)
+      this.currentPage = val
     }
   }
 }

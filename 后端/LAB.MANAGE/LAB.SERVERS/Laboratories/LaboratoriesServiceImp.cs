@@ -65,5 +65,29 @@ namespace LAB.SERVERS
                 throw new Exception();
             }
         }
+
+        public IEnumerable<object> GetByFloor(int FID)
+        {
+            try 
+            {
+                return db_Laboratories.GetByFloor(FID);
+            }
+            catch 
+            {
+                throw new Exception();
+            }
+        }
+
+        public bool AssignMent(int LID, int UID) 
+        {
+            try 
+            {
+                return db_Laboratories.AssignMent(LID, UID);
+            }
+            catch 
+            {
+                return false;
+            }
+        }
     }
 }

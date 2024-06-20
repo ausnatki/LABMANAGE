@@ -14,7 +14,7 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">立即创建</el-button>
+        <el-button type="primary" :loading="AddButtonLoading" @click="onSubmit">立即创建</el-button>
         <el-button @click="onCancel">取消</el-button>
       </el-form-item>
     </el-form>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { AddSemesteres } from '@/api/semesteres.js'
 export default {
   data() {
     return {
@@ -29,6 +30,11 @@ export default {
         Name: '',
         IsDel: false
       },
+      tform: {
+        Name: '',
+        IsDel: false
+      },
+      AddButtonLoading: false,
       rules: {
         Name: [
           { required: true, message: '学期名不能为空', trigger: 'blur' }
@@ -43,7 +49,7 @@ export default {
     onSubmit() {
       this.$refs.form.validate((valid) => {
         if (valid) {
-          alert('提交成功')
+          this.addSemesteres(this.form)
         } else {
           console.log('表单验证失败')
           return false
@@ -52,6 +58,21 @@ export default {
     },
     onCancel() {
       this.$refs.form.resetFields()
+    },
+    // 添加逻辑
+    async addSemesteres(data) {
+      this.AddButtonLoading = true
+      await AddSemesteres(data).then(result => {
+        console.log(result)
+        this.$message({
+          type: 'success',
+          message: result.msg
+        })
+      }).catch(response => {
+        console.error(response)
+      }).finally(() => {
+        this.AddButtonLoading = false
+      })
     }
   }
 }

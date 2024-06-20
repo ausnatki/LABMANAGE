@@ -65,7 +65,7 @@ namespace LAB.REPOSITORY
             {
                 try
                 {
-                    academy.IsDel = false;
+                    academy.IsDel = !academy.IsDel;
                     Ctx.Academys.Add(academy);
                     Ctx.SaveChanges();
                     transaction.Commit();
@@ -113,7 +113,9 @@ namespace LAB.REPOSITORY
                    var tacademy = Ctx.Academys.Where(c=>c.Id == academy.Id).FirstOrDefault();
                     if(tacademy == null) throw new Exception();
                     
+
                     tacademy.Name = academy.Name;
+                    tacademy.IsDel = !academy.IsDel;
 
                     Ctx.SaveChanges();
                     transaction.Commit();

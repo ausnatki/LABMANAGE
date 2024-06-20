@@ -72,14 +72,14 @@ namespace LAB.MANAGE.Controllers
             if (semesteresService.EditSemesteres(semesters))
             {
                 result.Code = 20000;
-                result.Msg = "添加学期成功";
+                result.Msg = "修改学期成功";
                 result.Result = true;
                 return result;
             }
             else
             {
                 result.Code = 501;
-                result.Msg = "添加学期失败";
+                result.Msg = "修改学期失败";
                 result.Result = false;
                 return result;
             }

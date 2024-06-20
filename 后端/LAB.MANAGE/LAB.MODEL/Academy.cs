@@ -14,6 +14,6 @@ namespace LAB.MODEL
         public string Name {  get; set; }
         public bool IsDel {  get; set; }
         public List<LAB.MODEL.SysUser>? sysUsers { get; set; }
-        public List<LAB.MODEL.Laboratories>?  laboratories { get; set; }
+        //public List<LAB.MODEL.Laboratories>?  laboratories { get; set; }
     }
 }

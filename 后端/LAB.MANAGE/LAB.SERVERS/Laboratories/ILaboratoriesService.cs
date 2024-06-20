@@ -15,5 +15,8 @@ namespace LAB.SERVERS
         public bool EditLab(LAB.MODEL.Laboratories laboratories);
 
         public bool ChangeState(int LID);
+        public IEnumerable<object> GetByFloor(int FID);
+        public bool AssignMent(int LID, int UID);
+
     }
 }

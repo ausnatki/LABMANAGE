@@ -1,12 +1,280 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_laboratories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_academy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B88B28A-78EC-4029-A7BF-E00A890D1383}|..\\LAB.MODEL\\LAB.MODEL.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.model\\academy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\laboratoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\laboratoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\laboratories\\ilaboratoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\laboratories\\laboratoriesserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_semesteres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\sysusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\sysusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\sysuser\\isysuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\sysuser\\sysuserserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B88B28A-78EC-4029-A7BF-E00A890D1383}|..\\LAB.MODEL\\LAB.MODEL.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.model\\apiresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B88B28A-78EC-4029-A7BF-E00A890D1383}|..\\LAB.MODEL\\LAB.MODEL.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.model\\dotempclass\\laboratoriesadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\academycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\academycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Academy.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\Academy.cs",
+              "RelativeDocumentMoniker": "..\\LAB.MODEL\\Academy.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\Academy.cs",
+              "RelativeToolTip": "..\\LAB.MODEL\\Academy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:47:46.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "db_semesteres.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_semesteres.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_semesteres.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_semesteres.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_semesteres.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:23:18.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "db_academy.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_academy.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_academy.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_academy.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_academy.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:17:05.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SysUserController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SysUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SysUserController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SysUserController.cs",
+              "RelativeToolTip": "Controllers\\SysUserController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwGUAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:13:20.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISysUserService.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:13:15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SysUserServiceImp.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAwFAAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:12:16.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "db_sysuser.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_sysuser.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_sysuser.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_sysuser.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_sysuser.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAwJMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:05:36.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LaboratoriesController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\LaboratoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LaboratoriesController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\LaboratoriesController.cs",
+              "RelativeToolTip": "Controllers\\LaboratoriesController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA9wHoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:47:59.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LaboratoriesServiceImp.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Laboratories\\LaboratoriesServiceImp.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Laboratories\\LaboratoriesServiceImp.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Laboratories\\LaboratoriesServiceImp.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Laboratories\\LaboratoriesServiceImp.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAywFAAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:47:16.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ILaboratoriesService.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Laboratories\\ILaboratoriesService.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Laboratories\\ILaboratoriesService.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Laboratories\\ILaboratoriesService.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Laboratories\\ILaboratoriesService.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwBIAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:47:03.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiResult.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\ApiResult.cs",
+              "RelativeDocumentMoniker": "..\\LAB.MODEL\\ApiResult.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\ApiResult.cs",
+              "RelativeToolTip": "..\\LAB.MODEL\\ApiResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:43:30.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "db_laboratories.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_laboratories.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_laboratories.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_laboratories.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_laboratories.cs",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAAwLUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:02:12.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LaboratoriesAdd.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\DoTempClass\\LaboratoriesAdd.cs",
+              "RelativeDocumentMoniker": "..\\LAB.MODEL\\DoTempClass\\LaboratoriesAdd.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\DoTempClass\\LaboratoriesAdd.cs",
+              "RelativeToolTip": "..\\LAB.MODEL\\DoTempClass\\LaboratoriesAdd.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T14:59:47.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "db_floor.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_floor.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_floor.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_floor.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_floor.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwBsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:55:24.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AcademyController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\AcademyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AcademyController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\AcademyController.cs",
+              "RelativeToolTip": "Controllers\\AcademyController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:01:13.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BuilderController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BuilderController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
+              "RelativeToolTip": "Controllers\\BuilderController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvxkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:00:25.775Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

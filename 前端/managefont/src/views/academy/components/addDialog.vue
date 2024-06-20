@@ -14,7 +14,7 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">立即创建</el-button>
+        <el-button type="primary" :loading="AddButtonLoading" @click="onSubmit">立即创建</el-button>
         <el-button @click="onCancel">取消</el-button>
       </el-form-item>
     </el-form>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { AddAcademy } from '@/api/academy.js'
 export default {
   data() {
     return {
@@ -29,9 +30,14 @@ export default {
         Name: '',
         IsDel: false
       },
+      tform: {
+        Name: '',
+        IsDel: false
+      },
+      AddButtonLoading: false,
       rules: {
         Name: [
-          { required: true, message: '学院名不能为空', trigger: 'blur' }
+          { required: true, message: '学期名不能为空', trigger: 'blur' }
         ],
         IsDel: [
           { required: true, message: '是否启用不能为空', trigger: 'change' }
@@ -43,7 +49,7 @@ export default {
     onSubmit() {
       this.$refs.form.validate((valid) => {
         if (valid) {
-          alert('提交成功')
+          this.addacademy(this.form)
         } else {
           console.log('表单验证失败')
           return false
@@ -52,6 +58,22 @@ export default {
     },
     onCancel() {
       this.$refs.form.resetFields()
+    },
+    // 添加逻辑
+    async addacademy(data) {
+      this.AddButtonLoading = true
+      await AddAcademy(data).then(result => {
+        console.log(result)
+        this.$message({
+          type: 'success',
+          message: result.msg
+        })
+      }).catch(response => {
+        console.error(response)
+      }).finally(() => {
+        this.$refs['form'].resetFields()
+        this.AddButtonLoading = false
+      })
     }
   }
 }

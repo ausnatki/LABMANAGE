@@ -77,5 +77,20 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 根据学院查找人员
+        public IEnumerable<object> GetByAcademy(int CID)
+        {
+            try 
+            {
+                return db_Sysuser.GetByAcademy(CID);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+
     }
 }

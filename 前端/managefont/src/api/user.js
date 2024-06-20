@@ -16,48 +16,51 @@ export function getInfo(token) {
   })
 }
 
-export function enroll(data) {
+export function GetAllList() {
   return request({
-    url: '/Book/SysUser/Enroll',
+    url: '/Lab/SysUser/GetAllList',
+    method: 'get'
+  })
+}
+
+export function AddUser(data) {
+  return request({
+    url: '/Lab/SysUser/AddUser',
     method: 'post',
     data
   })
 }
 
-export function logout() {
+export function EditUser(data) {
   return request({
-    url: '/webapiconsul/Login/logout',
-    method: 'post'
-  })
-}
-
-export function GetInfoById(id) {
-  return request({
-    url: '/Book/SysUser/GetInfoById',
+    url: '/Lab/SysUser/EditUser',
     method: 'post',
-    params: { id }
+    data
   })
 }
 
-export function EditInfo(user) {
+export function GetRoleList() {
   return request({
-    url: '/Book/SysUser/EditInfo',
-    method: 'post',
-    data: user
-  })
-}
-
-export function GetAll() {
-  return request({
-    url: '/Book/SysUser/GetAllSysUser',
+    url: '/Lab/SysUser/GetRoleList',
     method: 'get'
   })
 }
 
-export function ChangeState(UID) {
+export function GetByAcademy(CID) {
   return request({
-    url: '/Book/SysUser/ChangeState',
-    method: 'post',
-    params: { UID }
+    url: '/Lab/SysUser/GetByAcademy',
+    method: 'get',
+    params: { CID }
   })
 }
+
+export function AssignMent(LID, UID) {
+  return request({
+    url: '/Lab/Laboratories/AssignMent',
+    method: 'post',
+    params: { LID, UID }
+  })
+}
+
+// AssignMent
+// GetByAcademy

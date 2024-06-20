@@ -20,18 +20,36 @@
       </el-form-item>
       <el-form-item label="性别" prop="Sex">
         <el-radio-group v-model="form.Sex">
-          <el-radio label="男" :value="true" />
-          <el-radio label="女" :value="false" />
+          <el-radio :label="true">男</el-radio>
+          <el-radio :label="false">女</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item label="所属学院" prop="CID">
-        <el-select v-model="form.CID" placeholder="请选择活动区域">
-          <el-option label="软件学院" value="shanghai" />
-          <el-option label="管理学院" value="beijing" />
+        <el-select
+          v-model="form.CID"
+          placeholder="请选择"
+        >
+          <el-option
+            v-for="item in options"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
+          />
+        </el-select>
+
+      </el-form-item>
+      <el-form-item label="角色" prop="RID">
+        <el-select v-model="form.RID" placeholder="请选择">
+          <el-option
+            v-for="item in roleoption"
+            :key="item.id"
+            :label="item.roleName"
+            :value="item.id"
+          />
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">立即创建</el-button>
+        <el-button type="primary" :loading="AddButtonLoading" @click="onSubmit">立即创建</el-button>
         <el-button @click="onCancel">取消</el-button>
       </el-form-item>
     </el-form>
@@ -39,6 +57,8 @@
 </template>
 
 <script>
+import { GetList } from '@/api/academy.js'
+import { GetRoleList, AddUser } from '@/api/user.js'
 export default {
   data() {
     return {
@@ -49,8 +69,22 @@ export default {
         Phone: '',
         Sex: null,
         CID: '',
-        Password: ''
+        Password: '',
+        RID: ''
       },
+      tform: {
+        UserName: '',
+        LoginName: '',
+        Email: '',
+        Phone: '',
+        Sex: null,
+        CID: '',
+        Password: '',
+        RID: ''
+      },
+      roleoption: [],
+      options: [],
+      AddButtonLoading: false,
       rules: {
         UserName: [
           { required: true, message: '请输入姓名', trigger: 'blur' }
@@ -74,25 +108,63 @@ export default {
         Sex: [
           { required: true, message: '请选择性别', trigger: 'change' }
         ],
-        CID: [
+        RID: [
           { required: true, message: '请选择所属学院', trigger: 'change' }
         ]
       }
     }
   },
+  mounted() {
+    this.InitData()
+  },
   methods: {
     onSubmit() {
       this.$refs.form.validate((valid) => {
         if (valid) {
-          alert('提交成功')
+          this.addUser(this.form)
         } else {
           console.log('表单验证失败')
-          return false
         }
       })
     },
     onCancel() {
       this.$refs.form.resetFields()
+    },
+    // 初始化数据
+    async InitData() {
+      await GetRoleList().then(result => {
+        // console.log(result)
+        this.roleoption = result.data
+      }).catch(response => {
+        console.error(response)
+      })
+
+      await GetList().then(result => {
+        console.log(result)
+        this.options = result.data
+      }).catch(response => {
+        console.log(response)
+      })
+    },
+    // 添加用户的逻辑
+    addUser(data) {
+      this.AddButtonLoading = true
+      AddUser(data).then(result => {
+        // console.log(result)
+        this.$message({
+          type: 'success',
+          message: result.msg
+        })
+        this.form = this.tform
+      }).catch(response => {
+        console.error(response)
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      }).finally(() => {
+        this.AddButtonLoading = false
+      })
     }
   }
 }

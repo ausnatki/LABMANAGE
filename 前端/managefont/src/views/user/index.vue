@@ -1,12 +1,8 @@
 <template>
   <div class="my-box">
-    <!-- 这里是通过图书名查询 -->
-    <el-input v-model="serchBookname" placeholder="图书名" style="width:200px;padding:0 10px 10px 0" />
-    <el-button type="primary" @click="ClickSerchBookName">搜索</el-button>
-
-    <!-- 这里是通过我的作者查询 -->
-    <el-input v-model="serchBookauth" placeholder="作者" style="width:200px;padding:0 10px 10px 10px" />
-    <el-button type="primary" @click="ClickSerchBookAuth">搜索</el-button>
+    <!-- 这里是通过姓名查询 -->
+    <el-input v-model="serchUsername" placeholder="姓名" style="width:200px;padding:0 10px 10px 0" />
+    <el-button type="primary" @click="ClickSerchUserName">搜索</el-button>
 
     <!-- 这里是我的多选框的部分 -->
     <el-select
@@ -18,9 +14,9 @@
     >
       <el-option
         v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
+        :key="item.id"
+        :label="item.name"
+        :value="item.id"
       />
     </el-select>
 
@@ -29,7 +25,9 @@
 
     <!-- 表格部分 -->
     <el-table
-      :data="tableData"
+      v-loading="isLoading"
+      :data="filteredData"
+      :default-sort="{prop: 'id', order: 'descending'}"
       border
       style="width: 100%"
     >
@@ -37,7 +35,7 @@
         label="编号"
       >
         <template slot-scope="scope">
-          {{ scope.$index+1 }}
+          {{ scope.$index+1+(currentPage-1)*pageSize }}
         </template>
       </el-table-column>
       <el-table-column
@@ -76,7 +74,7 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-link type="primary" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row.id)">修改</el-link>
+          <el-link type="primary" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
           <el-link type="danger" icon="el-icon-edit">删除</el-link>
         </template>
       </el-table-column>
@@ -100,7 +98,6 @@
       title="提示"
       :visible.sync="dialogAdd"
       width="30%"
-      :before-close="handleClose"
     >
       <AddDialog />
     </el-dialog>
@@ -110,14 +107,17 @@
       title="提示"
       :visible.sync="dialogEdit"
       width="30%"
-      :before-close="handleClose"
     >
-      <EditDialog />
+      <template v-if="dialogEdit">
+        <EditDialog :editdata.sync="editData" />
+      </template>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import { GetList } from '@/api/academy.js'
+import { GetAllList } from '@/api/user.js'
 import EditDialog from '@/views/user/components/editDialog.vue'
 import AddDialog from '@/views/user/components/addDialog.vue'
 export default {
@@ -128,77 +128,39 @@ export default {
   },
   data() {
     return {
-      tableData: [{
-        id: '1',
-        userName: '王小虎',
-        loginName: '2199070306',
-        email: '1132332@outlook.com',
-        phone: '15123535388',
-        sex: true,
-        academy: '软件学院'
-      },
-      {
-        id: '2',
-        userName: '王小虎',
-        loginName: '2199070306',
-        email: '1132332@outlook.com',
-        phone: '15123535388',
-        sex: true,
-        academy: '软件学院'
-      },
-      {
-        id: '3',
-        userName: '王小虎',
-        loginName: '2199070306',
-        email: '1132332@outlook.com',
-        phone: '15123535388',
-        sex: true,
-        academy: '软件学院'
-      },
-      {
-        id: '4',
-        userName: '王小虎',
-        loginName: '2199070306',
-        email: '1132332@outlook.com',
-        phone: '15123535388',
-        sex: true,
-        academy: '软件学院'
-      }],
-      serchBookname: '',
-      tserchBookname: '',
-      serchBookauth: '',
-      tserchBookauth: '',
+      tableData: [],
+      serchUsername: '',
+      tserchUsername: '',
       dialogAdd: false,
-      dialogEdit: false
+      dialogEdit: false,
+      isLoading: true,
+      serchCategory: [],
+      currentPage: 1, // 当前页码
+      total: 20, // 总条数
+      pageSize: 10, // 每页的数据条数
+      options: [],
+      editData: {}
     }
   },
   computed: {
     filteredData() {
       // console.log(this.tableData)
       let filtered = this.tableData
-      const bookname = this.tserchBookname
-      const auth = this.tserchBookauth
+      const username = this.tserchUsername
       const category = this.serchCategory
-      // filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+      filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
 
       // console.log(category.length)
       // 判断是否有值
-      if (bookname) {
-        console.log('进行我的图书查询')
+      if (username) {
+        // console.log('进行我的图书查询')
         filtered = filtered.filter(item => {
-          return item.bookName.includes(bookname)
-        })
-      }
-      // console.log(filtered)
-      if (auth) {
-        console.log('进行我的作者查询')
-        filtered = filtered.filter(item => {
-          return item.author.includes(auth)
+          return item.userName.includes(username)
         })
       }
       // console.log(filtered)
       if (category.length) {
-        console.log('进行我的类别查询')
+        // console.log('进行我的类别查询')
         filtered = filtered.filter(item => {
           return category.includes(item.category)
         })
@@ -207,7 +169,41 @@ export default {
       return filtered
     }
   },
+  watch: {
+    dialogAdd(newVal) {
+      if (newVal === false) this.InitData()
+    },
+
+    dialogEdit(newVal) {
+      if (newVal === false) this.InitData()
+    }
+  },
+  mounted() {
+    this.InitData()
+    this.InitSelect()
+  },
   methods: {
+    // 初始化列表数据
+    async InitData() {
+      this.isLoading = true
+      await GetAllList().then(result => {
+        // console.log(result)
+        this.tableData = result.data
+      }).catch(response => {
+        console.error(response)
+      }).finally(() => {
+        this.isLoading = false
+      })
+    },
+    // 初始化搜索框选项
+    async InitSelect() {
+      await GetList().then(result => {
+        console.log(result)
+        this.options = result.data
+      }).catch(response => {
+        console.log(response)
+      })
+    },
     // 性别标签文本
     SexText(sex) {
       switch (sex) {
@@ -235,8 +231,24 @@ export default {
       this.dialogAdd = true
     },
     // 点击修改
-    ClickEdit(UID) {
+    ClickEdit(data) {
+      this.editData = data
       this.dialogEdit = true
+    },
+    // 点击搜索
+    ClickSerchUserName() {
+      this.tserchUsername = this.serchUsername
+    },
+    // 每页条数改变时触发 选择一页显示多少行
+    handleSizeChange(val) {
+      // console.log(`每页 ${val} 条`)
+      this.currentPage = 1
+      this.pageSize = val
+    },
+    // 当前页改变时触发 跳转其他页
+    handleCurrentChange(val) {
+      // console.log(`当前页: ${val}`)
+      this.currentPage = val
     }
   }
 }

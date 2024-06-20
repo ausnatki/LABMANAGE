@@ -1,31 +1,16 @@
 <template>
   <div class="my-box">
     <!-- 这里是通过图书名查询 -->
-    <el-input v-model="serchBookname" placeholder="图书名" style="width:200px;padding:0 10px 10px 0" />
-    <el-button type="primary" @click="ClickSerchBookName">搜索</el-button>
-
-    <!-- 这里是我的多选框的部分 -->
-    <el-select
-      v-model="serchCategory"
-      multiple
-      collapse-tags
-      style="margin-left: 20px;"
-      placeholder="请选择"
-    >
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-      />
-    </el-select>
+    <el-input v-model="serchname" placeholder="图书名" style="width:200px;padding:0 10px 10px 0" />
+    <el-button type="primary" @click="ClickSerchName">搜索</el-button>
 
     <!-- 添加用户信息 -->
     <el-button type="warning" style="margin-left:20px" @click="ClickAdd()">添加学期名</el-button>
 
     <!-- 表格部分 -->
     <el-table
-      :data="tableData"
+      v-loading="isLoading"
+      :data="filteredData"
       border
       style="width: 100%"
     >
@@ -43,7 +28,11 @@
       <el-table-column
         prop="number"
         label="楼房层数"
-      />
+      >
+        <template slot-scope="scope">
+          <el-tag>{{ scope.row.number }}</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="isDel"
         label="是否启用"
@@ -53,6 +42,8 @@
             v-model="scope.row.isDel"
             active-color="#13ce66"
             inactive-color="#ff4949"
+            :loading="ButtonLoading"
+            @change="changeState(scope.row.id)"
           />
         </template>
       </el-table-column>
@@ -60,9 +51,8 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-link type="primary" style="margin-right:10px" @click="ClickEdit(scope.row.id)">修改</el-link>
-          <el-link type="primary" style="margin-right:10px" @click="ClickEdit(scope.row.id)">添加</el-link>
-          <el-link type="danger">楼层查看</el-link>
+          <el-link type="primary" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
+          <el-link type="primary" style="margin-right:10px" @click="ClickAddFloor(scope.row.id)">添加楼层</el-link>
         </template>
       </el-table-column>
 
@@ -80,99 +70,196 @@
       @current-change="handleCurrentChange"
     />
 
-    <!-- 添加弹出层 -->
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogAdd"
-      width="30%"
-      :before-close="handleClose"
-    >
-      <AddDialog />
-    </el-dialog>
-
-    <!-- 修改弹出层 -->
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogEdit"
-      width="30%"
-      :before-close="handleClose"
-    >
-      <EditDialog />
-    </el-dialog>
   </div>
 </template>
 
 <script>
-import EditDialog from '@/views/semesteres/components/editDialog.vue'
-import AddDialog from '@/views/semesteres/components/addDialog.vue'
+import { AddBuilder, GetAllList, EditBuilder, ChangeState } from '@/api/building'
+import { AddFloor } from '@/api/floor.js'
 export default {
   name: 'BuilderPage',
-  components: {
-    AddDialog,
-    EditDialog
-  },
+
   data() {
     return {
-      tableData: [{
-        id: '1',
-        name: '第四教学楼',
-        isDel: true,
-        number: 1
-      }],
-      serchBookname: '',
-      tserchBookname: '',
-      serchBookauth: '',
-      tserchBookauth: '',
-      dialogAdd: false,
-      dialogEdit: false
+      tableData: [],
+      isLoading: true,
+      serchname: '',
+      tserchname: '',
+      dialogEdit: false,
+      currentPage: 1, // 当前页码
+      total: 20, // 总条数
+      pageSize: 10 // 每页的数据条数
     }
   },
   computed: {
     filteredData() {
-      // console.log(this.tableData)
       let filtered = this.tableData
-      const bookname = this.tserchBookname
-      const auth = this.tserchBookauth
-      const category = this.serchCategory
-      // filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+      const name = this.tserchname
+      filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
 
-      // console.log(category.length)
-      // 判断是否有值
-      if (bookname) {
-        console.log('进行我的图书查询')
+      if (name) {
         filtered = filtered.filter(item => {
-          return item.bookName.includes(bookname)
+          return item.name.includes(name)
         })
       }
-      // console.log(filtered)
-      if (auth) {
-        console.log('进行我的作者查询')
-        filtered = filtered.filter(item => {
-          return item.author.includes(auth)
-        })
-      }
-      // console.log(filtered)
-      if (category.length) {
-        console.log('进行我的类别查询')
-        filtered = filtered.filter(item => {
-          return category.includes(item.category)
-        })
-      }
-      // console.log(filtered)
-      return filtered
+      // Apply pagination after filtering
+
+      return filtered.map(item => ({
+        ...item,
+        isDel: !item.isDel // 取反
+      }))
     }
   },
+  mounted() {
+    this.InitData()
+  },
   methods: {
-    // 点击添加
+  // 点击添加
     ClickAdd() {
-      this.dialogAdd = true
+      this.$prompt('请输入楼层名称', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^(?!\s*$).+/,
+        inputErrorMessage: '楼层名称不能为空'
+      }).then(async({ value }) => {
+        const data = {
+          id: 0,
+          name: value,
+          isDel: false,
+          number: 0
+        }
+        try {
+          const result = AddBuilder(data)
+          console.log(result)
+          this.tableData.push(data) // Add new item to tableData
+          this.$message({
+            type: 'success',
+            message: result.msg
+          })
+        } catch (response) {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        }
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消输入'
+        })
+      })
     },
     // 点击修改
-    ClickEdit(UID) {
+    ClickEdit(data) {
       this.dialogEdit = true
+      this.$prompt('请输入楼房名称', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^(?!\s*$).+/,
+        inputErrorMessage: '请输入修改后的名称',
+        inputValue: data.name
+      }).then(({ value }) => {
+        data.name = value
+        this.EditBuilder(data)
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消输入'
+        })
+      })
+    },
+    // 初始化数据
+    InitData() {
+      console.log('dasdada')
+      this.isLoading = true
+      GetAllList().then(result => {
+        console.log(result)
+        this.tableData = result.data
+      }).catch(response => {
+        console.log('发生错误')
+        console.error(response)
+      }).finally(() => {
+        this.isLoading = false
+      })
+    },
+    // 点击搜索
+    ClickSerchName() {
+      this.tserchname = this.serchname
+    },
+    // 每页条数改变时触发 选择一页显示多少行
+    handleSizeChange(val) {
+      // console.log(`每页 ${val} 条`)
+      this.currentPage = 1
+      this.pageSize = val
+    },
+    // 当前页改变时触发 跳转其他页
+    handleCurrentChange(val) {
+      // console.log(`当前页: ${val}`)
+      this.currentPage = val
+    },
+    // 点击添加楼层
+    ClickAddFloor(BID) {
+      this.$confirm('是否添加楼层此操作会导致不可逆, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        AddFloor(BID) // Pass BID as an argument to AddFloor
+          .then(result => { // Chain the .then method to handle the result
+            this.$message({
+              type: 'success',
+              message: result.msg
+            })
+          })
+          .catch(response => { // Handle errors
+            this.$message({
+              type: 'error', // Changed to 'error' type for better clarity
+              message: response.msg
+            })
+          }).finally(() => {
+            this.InitData()
+          })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消操作'
+        })
+      })
+    },
+    // 点击修改
+    EditBuilder(data) {
+      EditBuilder(data).then(result => {
+        this.$message({
+          type: 'success',
+          message: result.msg
+        })
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      })
+    },
+    // 点击状态开关的选项
+    changeState(BID) {
+      this.ButtonLoading = true
+      ChangeState(BID).then(result => {
+        this.$message({
+          type: 'success',
+          message: result.msg
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        })
+      }).finally(() => {
+        this.ButtonLoading = false
+      })
     }
   }
 }
+
 </script>
 
 <style scope>

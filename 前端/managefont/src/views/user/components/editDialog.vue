@@ -1,7 +1,6 @@
-
 <template>
   <div class="my-box">
-    <el-form ref="form" :model="form" :rules="rules" label-width="80px">
+    <el-form ref="form" v-loading="isLoading" :model="form" :rules="rules" label-width="80px">
       <el-form-item label="姓名" prop="UserName">
         <el-col :span="14">
           <el-input v-model="form.UserName" />
@@ -17,7 +16,7 @@
         <el-input v-model="form.Phone" />
       </el-form-item>
       <el-form-item label="密码" prop="Password">
-        <el-input v-model="form.Password" type="password" />
+        <el-input v-model="form.Password" />
       </el-form-item>
       <el-form-item label="性别" prop="Sex">
         <el-radio-group v-model="form.Sex">
@@ -26,13 +25,31 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item label="所属学院" prop="CID">
-        <el-select v-model="form.CID" placeholder="请选择所属学院">
-          <el-option label="软件学院" value="1" />
-          <el-option label="管理学院" value="2" />
+        <el-select
+          v-model="form.CID"
+          placeholder="请选择"
+        >
+          <el-option
+            v-for="item in options"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
+          />
+        </el-select>
+
+      </el-form-item>
+      <el-form-item label="角色" prop="RID">
+        <el-select v-model="form.RID" placeholder="请选择">
+          <el-option
+            v-for="item in roleoption"
+            :key="item.id"
+            :label="item.roleName"
+            :value="item.id"
+          />
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">立即创建</el-button>
+        <el-button type="primary" :loading="EditButtonLoading" @click="onSubmit">立即创建</el-button>
         <el-button @click="onCancel">取消</el-button>
       </el-form-item>
     </el-form>
@@ -40,18 +57,32 @@
 </template>
 
 <script>
+import { GetList } from '@/api/academy.js'
+import { GetRoleList, EditUser } from '@/api/user.js'
 export default {
+  props: {
+    editdata: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       form: {
-        UserName: '冯思锦',
-        LoginName: '219970305',
-        Email: '12121@outlook.com',
-        Phone: '18581348911',
-        Sex: true,
-        CID: '1',
-        Password: '123456'
+        Id: '',
+        UserName: '',
+        LoginName: '',
+        Email: '',
+        Phone: '',
+        Sex: null,
+        CID: '',
+        Password: '',
+        RID: ''
       },
+      isLoading: true,
+      roleoption: [],
+      options: [],
+      EditButtonLoading: false,
       rules: {
         UserName: [
           { required: true, message: '请输入姓名', trigger: 'blur' }
@@ -75,25 +106,73 @@ export default {
         Sex: [
           { required: true, message: '请选择性别', trigger: 'change' }
         ],
-        CID: [
+        RID: [
           { required: true, message: '请选择所属学院', trigger: 'change' }
         ]
       }
     }
   },
+  async mounted() {
+    await this.InitData().finally(() => { this.isLoading = false })
+  },
   methods: {
     onSubmit() {
       this.$refs.form.validate((valid) => {
         if (valid) {
-          alert('提交成功')
+          this.editUser(this.form)
         } else {
           console.log('表单验证失败')
-          return false
         }
       })
     },
     onCancel() {
       this.$refs.form.resetFields()
+    },
+    // 初始化数据
+    async InitData() {
+      await GetRoleList().then(result => {
+        // console.log(result)
+        this.roleoption = result.data
+      }).catch(response => {
+        console.error(response)
+      })
+
+      await GetList().then(result => {
+        console.log(result)
+        this.options = result.data
+      }).catch(response => {
+        console.log(response)
+      })
+
+      this.form.Id = this.editdata.id
+      this.form.UserName = this.editdata.userName
+      this.form.CID = this.editdata.academyId
+      this.form.RID = this.editdata.roleId
+      this.form.Password = this.editdata.password
+      this.form.Sex = this.editdata.sex
+      this.form.Phone = this.editdata.phone
+      this.form.Email = this.editdata.email
+      this.form.LoginName = this.editdata.loginName
+    },
+    // 修改用户的逻辑
+    editUser(data) {
+      this.AddButtonLoading = true
+      EditUser(data).then(result => {
+        // console.log(result)
+        this.$message({
+          type: 'success',
+          message: result.msg
+        })
+        // this.form = this.tform
+      }).catch(response => {
+        console.error(response)
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      }).finally(() => {
+        this.EditButtonLoading = false
+      })
     }
   }
 }

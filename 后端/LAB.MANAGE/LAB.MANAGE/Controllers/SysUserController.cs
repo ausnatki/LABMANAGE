@@ -118,5 +118,26 @@ namespace LAB.MANAGE.Controllers
                 return result;
             }
         }
+
+        [HttpGet("GetByAcademy")]
+        public LAB.MODEL.ApiResp GetByAcademy(int CID)
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try 
+            {
+                result.Code = 20000;
+                result.Msg = "获取成功";
+                result.Result = true;
+                result.Data = _service.GetByAcademy(CID);
+                return result;
+            }
+            catch 
+            {
+                result.Code = 501;
+                result.Msg = "获取成失败";
+                result.Result = false;
+                return result;
+            }
+        }
     }
 }

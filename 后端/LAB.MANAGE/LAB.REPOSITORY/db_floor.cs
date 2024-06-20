@@ -28,7 +28,8 @@ namespace LAB.REPOSITORY
                     Id = c.Id,
                     Number = c.Number,
                     Builder = _ctx.SingleBuilding.Where(x => x.Id == c.BuildingId).Select(x => x.Name).FirstOrDefault(),
-                    IsDel = c.IsDel
+                    IsDel = c.IsDel,
+                    Count = _ctx.Laboratories.Where(x=>x.FloorId==c.Id).Count() // 此楼层实验室的数量
                 }).ToList();
                 return list;
 
@@ -94,9 +95,10 @@ namespace LAB.REPOSITORY
                 {
                     // 判断数据真实性
                     var tBuilder = _ctx.SingleBuilding.Where(c=>c.Id == BID).FirstOrDefault();
+                    tBuilder.Number++;
                     if(tBuilder == null) return false; 
                     LAB.MODEL.Floor floor  = new MODEL.Floor();
-                    floor.Number = tBuilder.Number + 1;
+                    floor.Number = tBuilder.Number*100; // 楼层三位数 与后面的实验室编号可以做对比 添加实验室的编号直接那这个加1
                     floor.BuildingId = BID;
                     floor.IsDel = false;
                     _ctx.Floor.Add(floor);

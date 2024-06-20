@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LAB.AUTH")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5408eb13077e41615d9f07e900682440aec9373")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38dbc4efa0fe44d7e23549608fe25550aa78660a")]
 [assembly: System.Reflection.AssemblyProductAttribute("LAB.AUTH")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LAB.AUTH")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

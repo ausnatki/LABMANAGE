@@ -1,4 +1,5 @@
 ﻿using LAB.DB;
+using LAB.MODEL;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,11 @@ namespace LAB.REPOSITORY
                     Email = c.Email,
                     Phone = c.Phone,
                     Sex = c.Sex,
-                    Academy = c.Academy.Name,
-                    Role = _ctx.UserRoles.Where(x => x.UID == c.Id).Select(c => c.Role.RoleName).FirstOrDefault()
+                    AcademyId = c.CID,
+                    Password = c.Password,
+                    Academy = _ctx.Academys.Where(x=>x.Id == c.CID).Select(c=>c.Name).FirstOrDefault(),
+                    Role = _ctx.UserRoles.Where(x => x.UID == c.Id).Select(c => c.Role.RoleName).FirstOrDefault(),
+                    RoleId = _ctx.UserRoles.Where(x => x.UID == c.Id).Select(c => c.Role.Id).FirstOrDefault(),
                 }).ToList();
                 return list;
             }
@@ -118,6 +122,7 @@ namespace LAB.REPOSITORY
                     taddUser.CID = addUser.CID;
                     taddUser.Email = addUser.Email;
                     taddUser.Phone = addUser.Phone;
+                    taddUser.Sex = addUser.Sex;
 
                     _ctx.SaveChanges();
 
@@ -127,6 +132,7 @@ namespace LAB.REPOSITORY
 
                     userRole.RID = addUser.RID;
 
+                    _ctx.SaveChanges();
                     transaction.Commit();
                     return true;
                 }
@@ -134,6 +140,25 @@ namespace LAB.REPOSITORY
                 {
                     transaction.Rollback(); return false;
                 }
+            }
+        }
+        #endregion
+
+        #region 根据学院获取用户列表
+        public IEnumerable<object> GetByAcademy(int CID)
+        {
+            try 
+            {
+
+                var list = (from user in _ctx.SysUsers
+                            join role in _ctx.UserRoles on user.Id equals role.UID
+                            where user.CID == CID && role.RID == 2
+                            select user).ToList();
+                return list;
+            }
+            catch 
+            {
+                throw new Exception();
             }
         }
         #endregion

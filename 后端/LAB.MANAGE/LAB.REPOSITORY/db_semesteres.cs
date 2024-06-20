@@ -46,6 +46,7 @@ namespace LAB.REPOSITORY
             {
                 try 
                 {
+                    semesters.IsDel = !semesters.IsDel;
                     Ctx.Semesters.Add(semesters);
                     Ctx.SaveChanges();
                     transacton.Commit();
@@ -72,7 +73,7 @@ namespace LAB.REPOSITORY
                     if (tsemesters == null) throw new Exception();
 
                     tsemesters.Name = semesters.Name;
-                    
+                    tsemesters.IsDel = !semesters.IsDel;
                     Ctx.SaveChanges();
                     transaction.Commit();
                     return true;

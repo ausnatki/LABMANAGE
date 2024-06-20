@@ -12,5 +12,7 @@ namespace LAB.SERVERS
         public bool AddUser(LAB.MODEL.DoTempClass.AddUser addUser);
         public IEnumerable<object> GetRoleList();
         public bool EditUser(LAB.MODEL.DoTempClass.AddUser doUser);
+
+        public IEnumerable<object> GetByAcademy(int CID);
     }
 }
