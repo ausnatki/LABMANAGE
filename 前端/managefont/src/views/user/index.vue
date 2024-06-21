@@ -16,7 +16,7 @@
         v-for="item in options"
         :key="item.id"
         :label="item.name"
-        :value="item.id"
+        :value="item.name"
       />
     </el-select>
 
@@ -31,54 +31,31 @@
       border
       style="width: 100%"
     >
-      <el-table-column
-        label="编号"
-      >
+      <el-table-column label="编号">
         <template slot-scope="scope">
           {{ scope.$index+1+(currentPage-1)*pageSize }}
         </template>
       </el-table-column>
-      <el-table-column
-        prop="userName"
-        label="姓名"
-      />
-      <el-table-column
-        prop="loginName"
-        label="学号"
-      />
-      <el-table-column
-        prop="email"
-        label="邮箱"
-      />
-      <el-table-column
-        prop="phone"
-        label="电话"
-      />
-      <el-table-column
-
-        label="性别"
-      >
+      <el-table-column prop="userName" label="姓名" />
+      <el-table-column prop="loginName" label="学号" />
+      <el-table-column prop="email" label="邮箱" />
+      <el-table-column prop="phone" label="电话" />
+      <el-table-column label="性别">
         <template slot-scope="scope">
           <el-tag :type="SexType(scope.row.sex)">{{ SexText(scope.row.sex) }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        prop="academy"
-        label="所属学院"
-      >
+      <el-table-column prop="academy" label="所属学院">
         <template slot-scope="scope">
           <el-tag>{{ scope.row.academy }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        label="操作"
-      >
+      <el-table-column label="操作">
         <template slot-scope="scope">
           <el-link type="primary" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
           <el-link type="danger" icon="el-icon-edit">删除</el-link>
         </template>
       </el-table-column>
-
     </el-table>
 
     <!-- 这里是我的分页组件 -->
@@ -88,7 +65,7 @@
       :page-sizes="[1, 5, 10, 20]"
       :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="tableData.length"
+      :total="total"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
@@ -162,7 +139,7 @@ export default {
       if (category.length) {
         // console.log('进行我的类别查询')
         filtered = filtered.filter(item => {
-          return category.includes(item.category)
+          return category.includes(item.academy)
         })
       }
       // console.log(filtered)

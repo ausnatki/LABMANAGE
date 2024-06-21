@@ -14,5 +14,7 @@ namespace LAB.SERVERS
         public bool EditUser(LAB.MODEL.DoTempClass.AddUser doUser);
 
         public IEnumerable<object> GetByAcademy(int CID);
+
+        public IEnumerable<object> GetRepairs();
     }
 }

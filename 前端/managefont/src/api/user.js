@@ -62,5 +62,12 @@ export function AssignMent(LID, UID) {
   })
 }
 
+export function GetRepairs() {
+  return request({
+    url: '/Lab/SysUser/GetRepairs',
+    method: 'get'
+  })
+}
+
 // AssignMent
 // GetByAcademy

@@ -39,6 +39,12 @@ builder.Services.AddScoped<LAB.SERVERS.ISemesteresService,LAB.SERVERS.Semesteres
 builder.Services.AddScoped<LAB.SERVERS.ILaboratoriesService,LAB.SERVERS.LaboratoriesServiceImp>();
 builder.Services.AddScoped<LAB.SERVERS.IFloorService,LAB.SERVERS.FloorServiceImp>();
 builder.Services.AddScoped<LAB.SERVERS.IBuilderService,LAB.SERVERS.BuilderServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IDailySafetyCheckService, LAB.SERVERS.DailySafetyCheckServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IHandingService,LAB.SERVERS.HandingServiceImp>();
+builder.Services.AddScoped<LAB.SERVERS.IRepairsService, LAB.SERVERS.RepairsServiceImp>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_handing>();
+builder.Services.AddScoped<LAB.REPOSITORY.db_repairs>();    
+builder.Services.AddScoped<LAB.REPOSITORY.db_dailySafetyCheck>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_builder>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_floor>();
 builder.Services.AddScoped<LAB.REPOSITORY.db_laboratories>();

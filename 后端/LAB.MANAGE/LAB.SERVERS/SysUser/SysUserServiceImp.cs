@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,11 +38,11 @@ namespace LAB.SERVERS
         #region 获取所有用户信息列表
         public IEnumerable<object> GetAllList()
         {
-            try 
+            try
             {
                 return db_Sysuser.GetAllList();
             }
-            catch 
+            catch
             {
                 throw new Exception();
             }
@@ -51,11 +52,11 @@ namespace LAB.SERVERS
         #region 获取所有角色列表
         public IEnumerable<object> GetRoleList()
         {
-            try 
+            try
             {
-              return  db_Sysuser.GetRoleList();
+                return db_Sysuser.GetRoleList();
             }
-            catch 
+            catch
             {
                 throw new Exception();
             }
@@ -65,12 +66,12 @@ namespace LAB.SERVERS
         #region 修改用户信息
         public bool EditUser(AddUser doUser)
         {
-            try 
+            try
             {
-                return  db_Sysuser.EditUser(doUser);
+                return db_Sysuser.EditUser(doUser);
 
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -80,7 +81,7 @@ namespace LAB.SERVERS
         #region 根据学院查找人员
         public IEnumerable<object> GetByAcademy(int CID)
         {
-            try 
+            try
             {
                 return db_Sysuser.GetByAcademy(CID);
             }
@@ -91,6 +92,19 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 获取所有维修人员
+        public IEnumerable<object> GetRepairs()
+        {
+            try
+            {
+                return db_Sysuser.GetRepairs();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
 
     }
 }

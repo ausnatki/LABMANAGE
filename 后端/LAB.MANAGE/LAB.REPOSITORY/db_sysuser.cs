@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -157,6 +158,24 @@ namespace LAB.REPOSITORY
                 return list;
             }
             catch 
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 获取所有维修人员
+        public IEnumerable<object> GetRepairs()
+        {
+            try
+            {
+                var list = (from user in _ctx.SysUsers
+                            join role in _ctx.UserRoles on user.Id equals role.UID
+                            where role.RID == 3
+                            select user).ToList();
+                return list;
+            }
+            catch
             {
                 throw new Exception();
             }

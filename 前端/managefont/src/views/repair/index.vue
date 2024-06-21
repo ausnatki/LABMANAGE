@@ -1,0 +1,155 @@
+<template>
+  <div class="my-box">
+    <!-- 搜索栏 -->
+    <el-input v-model="searchLabNumber" placeholder="请输入实验室编号" style="width:200px;padding:0 10px 10px 0" />
+    <el-button type="primary" @click="handleSearch">搜索</el-button>
+    <el-button type="success" @click="handleExportData">导出数据</el-button>
+
+    <!-- 表格部分 -->
+    <el-table
+      v-loading="isLoading"
+      :data="filteredData"
+      border
+      style="width: 100%"
+    >
+      <el-table-column label="编号" width="80">
+        <template slot-scope="scope">
+          {{ scope.$index + 1 + (currentPage - 1) * pageSize }}
+        </template>
+      </el-table-column>
+      <el-table-column prop="labNumber" label="实验室编号">
+        <template slot-scope="scope">
+          <el-tag>{{ scope.row.labNumber }}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column prop="repairDate" label="维修日期" />
+      <el-table-column prop="issuesFound" label="发现的问题" />
+      <el-table-column prop="repairName" label="维修人员" />
+      <el-table-column prop="completionStatus" label="完成状态">
+        <template slot-scope="scope">
+          <el-tag :type="scope.row.comletionStatus ? 'success' : 'danger'">
+            {{ scope.row.comletionStatus ? '已完成' : '未完成' }}
+          </el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" width="200">
+        <template slot-scope="scope">
+          <el-link type="primary" icon="el-icon-edit" @click="handleFillRepairForm(scope.row)">填写维修单</el-link>
+        </template>
+      </el-table-column>
+    </el-table>
+
+    <!-- 分页组件 -->
+    <el-pagination
+      align="center"
+      :current-page="currentPage"
+      :page-sizes="[10, 20, 50, 100]"
+      :page-size="pageSize"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="tableData.length"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+    />
+
+    <!-- 编辑日志弹出层 -->
+    <el-dialog
+      title="填写维修单"
+      :visible.sync="dialogAssign"
+      width="30%"
+    >
+      <template v-if="dialogAssign">
+        <EditLogDialog :dialogdata.sync="dialogdata" @close="dialogAssign = false" />
+      </template>
+    </el-dialog>
+  </div>
+</template>
+
+<script>
+import EditLogDialog from '@/views/repair/components/EditLogDialog.vue'
+import { GetAllRepairs } from '@/api/repairs.js'
+
+export default {
+  name: 'LogPage',
+  components: {
+    EditLogDialog
+  },
+  data() {
+    return {
+      tableData: [], // 演示数据
+      isLoading: true,
+      dialogdata: {},
+      dialogAssign: false,
+      searchLabNumber: '', // 搜索关键字
+      currentPage: 1, // 当前页码
+      pageSize: 10 // 每页的数据条数
+    }
+  },
+  computed: {
+    // 过滤后的数据
+    filteredData() {
+      let filtered = this.tableData
+      const labNumber = this.searchLabNumber.trim()
+
+      if (labNumber) {
+        filtered = filtered.filter(item => item.labNumber.includes(labNumber))
+      }
+
+      return filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+    }
+  },
+  mounted() {
+    this.initData()
+  },
+  methods: {
+    // 初始化数据 获取全部的日志信息
+    initData() {
+      this.isLoading = true
+      GetAllRepairs().then(result => {
+        this.tableData = result.data
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      }).finally(() => {
+        this.isLoading = false
+      })
+    },
+    // 搜索操作
+    handleSearch() {
+      // 重新从第一页开始显示
+      this.currentPage = 1
+    },
+    // 填写维修单操作
+    handleFillRepairForm(row) {
+      this.dialogdata = { ...row }
+      this.dialogAssign = true
+    },
+    // 导出数据
+    handleExportData() {
+      // TODO: 实现导出数据的逻辑
+      console.log('Export data')
+    },
+    // 保存操作
+    handleSave(data) {
+      // TODO: 实现保存数据的逻辑
+      console.log('Save data', data)
+      this.dialogAssign = false
+    },
+    // 分页：每页条数变化
+    handleSizeChange(val) {
+      this.pageSize = val
+    },
+    // 分页：当前页变化
+    handleCurrentChange(val) {
+      this.currentPage = val
+    }
+  }
+}
+</script>
+
+<style scoped>
+.my-box {
+  padding: 10px;
+}
+</style>

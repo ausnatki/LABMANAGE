@@ -128,41 +128,6 @@ export const constantRoutes = [
 export const asyncRoutes = [
 
   {
-    path: '/goods',
-    component: Layout,
-    redirect: '/goods/list',
-    alwaysShow: true,
-    name: 'GoodManage',
-    meta: {
-      title: '商品管理',
-      icon: 'guide',
-      roles: ['admin', 'editor']
-    },
-    children: [{
-      path: 'list',
-      component: () => import('@/views/goods/goods-list'),
-      name: 'goodsList',
-      meta: {
-        title: '商品列表',
-        icon: 'guide',
-        noCache: true,
-        roles: ['admin', 'editor']
-      }
-    },
-    {
-      path: 'add',
-      component: () => import('@/views/goods/goods-from'),
-      name: 'goodsform',
-      meta: {
-        title: '商品添加',
-        icon: 'guide',
-        noCache: true,
-        roles: ['admin']
-      }
-    }
-    ]
-  },
-  {
     path: '/user',
     component: Layout,
     redirect: '/user/list',
@@ -273,6 +238,52 @@ export const asyncRoutes = [
       name: 'laboratoriesList',
       meta: {
         title: '实验室列表',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    }
+    ]
+  },
+  {
+    path: '/check',
+    component: Layout,
+    redirect: '/check/list',
+    alwaysShow: true,
+    name: 'CheckManage',
+    meta: {
+      title: '日志管理',
+      icon: 'guide',
+      roles: ['admin', 'editor']
+    },
+    children: [{
+      path: 'dialChecklist',
+      component: () => import('@/views/dailSafetyCheck/index.vue'),
+      name: 'dialCheckList',
+      meta: {
+        title: '日志记录',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    },
+    {
+      path: 'repairlist',
+      component: () => import('@/views/handing/index.vue'),
+      name: 'repairList',
+      meta: {
+        title: '异常记录',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin', 'editor']
+      }
+    },
+    {
+      path: 'handinglist',
+      component: () => import('@/views/repair/index.vue'),
+      name: 'handingList',
+      meta: {
+        title: '维修记录',
         icon: 'guide',
         noCache: true,
         roles: ['admin', 'editor']

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using StackExchange.Redis;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
 
 namespace LAB.MANAGE.Controllers
 {
@@ -132,6 +133,27 @@ namespace LAB.MANAGE.Controllers
                 return result;
             }
             catch 
+            {
+                result.Code = 501;
+                result.Msg = "获取成失败";
+                result.Result = false;
+                return result;
+            }
+        }
+
+        [HttpGet("GetRepairs")]
+        public LAB.MODEL.ApiResp GetRepairs()
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Msg = "获取成功";
+                result.Result = true;
+                result.Data = _service.GetRepairs();
+                return result;
+            }
+            catch
             {
                 result.Code = 501;
                 result.Msg = "获取成失败";
