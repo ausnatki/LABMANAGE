@@ -1,4 +1,5 @@
-﻿using LAB.SERVERS;
+﻿using LAB.REPOSITORY;
+using LAB.SERVERS;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -230,6 +231,98 @@ namespace LAB.MANAGE.Controllers
                 result.Result = false;
                 result.Msg = "填写失败";
                 result.Code = 501;
+                return result;
+            }
+        }
+        #endregion
+
+        #region 通过日志记录获取维修记录
+        [HttpGet("GetRepairByDaily")]
+        public LAB.MODEL.ApiResp GetRepairByDaily(int DLID)
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Msg = "获取列表成功";
+                result.Data = _service.GetRepairByDaily(DLID);
+                result.Result = true;
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "获取列表失败";
+                result.Result = false;
+                return result;
+            }
+        }
+        #endregion
+
+        #region 湖通过日志记录获取异常信息
+        [HttpGet("GetHandingByDaily")]
+        public LAB.MODEL.ApiResp GetHandingByDaily(int DLID)
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Msg = "获取列表成功";
+                result.Data = _service.GetHandingByDaily(DLID);
+                result.Result = true;
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "获取列表失败";
+                result.Result = false;
+                return result;
+            }
+        }
+        #endregion
+
+        #region 获取实验室管理人员的日志记录
+        [HttpGet("GetDailyCheckByUser")]
+        public LAB.MODEL.ApiResp GetDailyCheckByUser(int UID) 
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Msg = "获取列表成功";
+                result.Data = _service.GetDailyCheckByUser(UID);
+                result.Result = true;
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "获取列表失败";
+                result.Result = false;
+                return result;
+            }
+        }
+        #endregion
+
+        #region 获取通知消息
+        [HttpGet("GetNotifyInitdata")]
+        public LAB.MODEL.ApiResp GetNotifyInitdata(int UID)
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Msg = "获取列表成功";
+                result.Data = _service.GetNotifyInitdata(UID);
+                result.Result = true;
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "获取列表失败";
+                result.Result = false;
                 return result;
             }
         }

@@ -136,7 +136,7 @@ export const asyncRoutes = [
     meta: {
       title: '用户管理',
       icon: 'guide',
-      roles: ['admin', 'editor']
+      roles: ['admin']
     },
     children: [{
       path: 'list',
@@ -146,7 +146,31 @@ export const asyncRoutes = [
         title: '用户列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
+      }
+    }
+    ]
+  },
+  {
+    path: '/ditu',
+    component: Layout,
+    redirect: '/ditu/list',
+    alwaysShow: true,
+    name: 'GoodManage',
+    meta: {
+      title: '地图',
+      icon: 'guide',
+      roles: ['admin']
+    },
+    children: [{
+      path: 'list',
+      component: () => import('@/views/ditu/index.vue'),
+      name: 'ditulist',
+      meta: {
+        title: 'ditu',
+        icon: 'guide',
+        noCache: true,
+        roles: ['admin']
       }
     }
     ]
@@ -160,7 +184,7 @@ export const asyncRoutes = [
     meta: {
       title: '学院管理',
       icon: 'guide',
-      roles: ['admin', 'editor']
+      roles: ['admin']
     },
     children: [{
       path: 'list',
@@ -170,7 +194,7 @@ export const asyncRoutes = [
         title: '学院列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
       }
     }
     ]
@@ -184,7 +208,7 @@ export const asyncRoutes = [
     meta: {
       title: '学期管理',
       icon: 'guide',
-      roles: ['admin', 'editor']
+      roles: ['admin']
     },
     children: [{
       path: 'list',
@@ -194,7 +218,7 @@ export const asyncRoutes = [
         title: '学期列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
       }
     }
     ]
@@ -208,7 +232,7 @@ export const asyncRoutes = [
     meta: {
       title: '楼房管理',
       icon: 'guide',
-      roles: ['admin', 'editor']
+      roles: ['admin']
     },
     children: [{
       path: 'builderlist',
@@ -218,7 +242,7 @@ export const asyncRoutes = [
         title: '楼房列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
       }
     },
     {
@@ -229,7 +253,7 @@ export const asyncRoutes = [
         title: '楼层列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
       }
     },
     {
@@ -240,7 +264,7 @@ export const asyncRoutes = [
         title: '实验室列表',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin']
       }
     }
     ]
@@ -254,7 +278,7 @@ export const asyncRoutes = [
     meta: {
       title: '日志管理',
       icon: 'guide',
-      roles: ['admin', 'editor']
+      roles: ['admin', 'managers', 'maintenance']
     },
     children: [{
       path: 'dialChecklist',
@@ -264,7 +288,7 @@ export const asyncRoutes = [
         title: '日志记录',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin', 'managers']
       }
     },
     {
@@ -275,7 +299,7 @@ export const asyncRoutes = [
         title: '异常记录',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin', 'managers']
       }
     },
     {
@@ -286,7 +310,7 @@ export const asyncRoutes = [
         title: '维修记录',
         icon: 'guide',
         noCache: true,
-        roles: ['admin', 'editor']
+        roles: ['admin', 'maintenance']
       }
     }
     ]

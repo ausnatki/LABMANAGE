@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LAB.SERVERS
 {
-    public class DailySafetyCheckServiceImp:IDailySafetyCheckService
+    public class DailySafetyCheckServiceImp : IDailySafetyCheckService
     {
         private readonly LAB.REPOSITORY.db_dailySafetyCheck db_DailySafetyCheck;
 
@@ -127,6 +127,62 @@ namespace LAB.SERVERS
             catch
             {
                 return false;
+            }
+        }
+        #endregion
+
+        #region 通过日志记录获取维修记录
+        public IEnumerable<object> GetRepairByDaily(int DLID)
+        {
+            try
+            {
+                return db_DailySafetyCheck.GetRepairByDaily(DLID);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 通过日志记录获取异常信息
+        public IEnumerable<object> GetHandingByDaily(int DLID)
+        {
+            try
+            {
+                return db_DailySafetyCheck.GetHandingByDaily(DLID);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 获取实验室管理人员的日志记录表
+        public IEnumerable<object> GetDailyCheckByUser(int UID)
+        {
+            try 
+            {
+                return db_DailySafetyCheck.GetDailyCheckByUser(UID);
+            }
+            catch 
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 获取通知消息
+        public IEnumerable<object> GetNotifyInitdata(int UID)
+        {
+            try
+            {
+                return db_DailySafetyCheck.GetNotifyInitdata(UID);
+            }
+            catch
+            {
+                throw new Exception();
             }
         }
         #endregion

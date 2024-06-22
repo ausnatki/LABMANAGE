@@ -21,5 +21,13 @@ namespace LAB.SERVERS
         public bool AddCheck(LAB.MODEL.DailySafetyCheck check);
         public bool Assignment(int DHLID, int UID);
         public bool UpdataRepairs(LAB.MODEL.LabEquipmentRepairs repairs);
+
+        public IEnumerable<object> GetHandingByDaily(int DLID);
+
+        public IEnumerable<object> GetRepairByDaily(int DLID);
+
+        public IEnumerable<object> GetDailyCheckByUser(int UID);
+
+        public IEnumerable<object> GetNotifyInitdata(int UID);
     }
 }

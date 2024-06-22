@@ -1,5 +1,10 @@
 import Vue from 'vue'
 
+import BaiduMap from 'vue2-baidu-map'
+
+import VueBMap from 'vue-bmap-gl'
+import 'vue-bmap-gl/dist/style.css'
+
 import Cookies from 'js-cookie'
 
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
@@ -33,12 +38,22 @@ import * as filters from './filters' // global filters
 //   const { mockXHR } = require('../mock')
 //   mockXHR()
 // }
+Vue.use(VueBMap)
+VueBMap.initBMapApiLoader({
+  ak: 'tDPgGh2rlmxPBGeG9MGBB2L2WFn9dx8l',
+  // 默认百度 sdk 版本为 1.0
+  v: '1.0'
+})
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
 
+Vue.use(BaiduMap, {
+  ak: 'tDPgGh2rlmxPBGeG9MGBB2L2WFn9dx8l', // 个人手机号私人使用-July_zhengfj  oukWFWRKCGktlhX25uFBpEt0nV4xxxxx
+  type: 'WebGL' // ||API 默认API  ('WebGL'使用此模式 BMap=BMapGL)
+})
 // register global utility filters
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])

@@ -3,7 +3,7 @@
     <!-- 搜索栏 -->
     <el-input v-model="searchName" placeholder="请输入楼层号" style="width:200px;padding:0 10px 10px 0" />
     <!-- <el-button type="primary" @click="handleSearch">搜索</el-button> -->
-    <el-button type="primary" @click="handleExportData">导出数据</el-button>
+    <el-button type="primary" @click="handleDownload">导出数据</el-button>
 
     <!-- 表格部分 -->
     <el-table
@@ -100,20 +100,56 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
+
+    <el-dialog title="添加检查记录" width="35%" :visible.sync="dialogadd">
+      <template v-if="dialogadd">
+        <DialogAdd :dialogdata.sync="dialogAddData" @updatadata="handleDataFromChild" />
+      </template>
+    </el-dialog>
+
+    <el-dialog title="异常信息" width="70%" :visible.sync="dialogHanding">
+      <template v-if="dialogHanding">
+        <DialogHanding :dialogdata.sync="dialogHandingData" />
+      </template>
+    </el-dialog>
+
+    <el-dialog title="维修信息" width="70%" :visible.sync="dialogRepair">
+      <template v-if="dialogRepair">
+        <DialogRepair :dialogdata.sync="dialogRepairData" />
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <script>
-import { GetAllDailyCheck } from '@/api/dailSafetyCheck.js'
+import DialogHanding from '@/views/dailSafetyCheck/components/dialogHanding.vue'
+import DialogRepair from '@/views/dailSafetyCheck/components/dialogRepair.vue'
+import DialogAdd from '@/views/dailSafetyCheck/components/addDialog.vue'
+import { GetAllDailyCheck, GetDailyCheckByUser, GetNotifyInitdata } from '@/api/dailSafetyCheck.js'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'LabLogPage',
+  components: {
+    DialogHanding,
+    DialogRepair,
+    DialogAdd
+  },
   data() {
     return {
       tableData: [],
       isLoading: true,
+      notifyPromise: Promise.resolve(),
+      dialogAddData: '',
       searchName: '', // 搜索关键字
       currentPage: 1, // 当前页码
-      pageSize: 10 // 每页的数据条数
+      pageSize: 10, // 每页的数据条数
+      dialogHandingData: '',
+      dialogRepairData: '',
+      dialogadd: false,
+      dialogHanding: false,
+      dialogRepair: false,
+      tHeader: []
     }
   },
   computed: {
@@ -139,25 +175,89 @@ export default {
       }
 
       return filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+    },
+    excelData() {
+      let filtered = this.tableData.map(item => ({
+        ...item,
+        cleanliness: item.cleanliness ? '正常' : '异常',
+        doorsAndWindows: item.doorsAndWindows ? '正常' : '异常',
+        electricalLines: item.electricalLines ? '正常' : '异常',
+        fireSafetyEquipmentAvailable: item.fireSafetyEquipmentAvailable ? '正常' : '异常',
+        fireSafetyEquipmentExpiry: item.fireSafetyEquipmentExpiry ? '正常' : '异常',
+        instrumentEquipmentIntact: item.instrumentEquipmentIntact ? '正常' : '异常',
+        instrumentEquipmentWorking: item.instrumentEquipmentWorking ? '正常' : '异常',
+        instrumentWarningLabelsIntact: item.instrumentWarningLabelsIntact ? '正常' : '异常',
+        otherSafetyHazards: item.otherSafetyHazards || '无',
+        state: item.state ? '正常' : '异常'
+      }))
+
+      const name = this.searchName.trim()
+      if (name) {
+        filtered = filtered.filter(item => item.labNumber.includes(name) || item.managerName.includes(name))
+      }
+
+      return filtered
+    },
+    ...mapGetters([
+      'roles',
+      'uid'
+    ])
+  },
+  watch: {
+    dialogadd(newVal) {
+      if (!newVal) this.initData()
     }
+  },
+  created() {
+    this.handleNotifications()
   },
   mounted() {
     this.initData()
   },
   methods: {
-    // 初始化数据 获取全部的日志信息
-    initData() {
+    async initData() {
       this.isLoading = true
-      GetAllDailyCheck().then(reuslt => {
-        this.tableData = reuslt.data
-      }).catch(response => {
+
+      try {
+        if (this.roles.includes('admin')) {
+          const allDailyCheckResult = await GetAllDailyCheck()
+          this.tableData = allDailyCheckResult.data
+        } else {
+          const dailyCheckByUserResult = await GetDailyCheckByUser(this.uid)
+          this.tableData = dailyCheckByUserResult.data
+        }
+      } catch (error) {
         this.$message({
           type: 'error',
-          message: response.msg
+          message: error.response.msg || 'An error occurred'
         })
-      }).finally(() => {
+      } finally {
         this.isLoading = false
+      }
+    },
+    async handleNotifications() {
+      const notifyInitDataResult = await GetNotifyInitdata(this.uid)
+      const h = this.$createElement
+      notifyInitDataResult.data.forEach(lab => {
+        this.notifyPromise = this.notifyPromise.then(() => {
+          const notification = this.$notify({
+            title: '实验室通知',
+            message: h('i', { style: 'color: teal' }, `${lab.labName}`),
+            type: 'warning',
+            duration: 0,
+            onClick: () => {
+              this.addLabToForm(lab)
+              notification.close() // 关闭通知
+            }
+          })
+        })
       })
+    },
+
+    addLabToForm(data) {
+      console.log(data)
+      this.dialogAddData = data
+      this.dialogadd = true
     },
     // 搜索操作
     handleSearch() {
@@ -171,13 +271,13 @@ export default {
     },
     // 查看异常信息操作
     handleViewExceptions(row) {
-      // TODO: 实现查看异常信息的逻辑
-      console.log('View exceptions for lab:', row.labNumber)
+      this.dialogHandingData = row.id
+      this.dialogHanding = true
     },
     // 查看维修信息操作
     handleViewRepairs(row) {
-      // TODO: 实现查看维修信息的逻辑
-      console.log('View repairs for lab:', row.labNumber)
+      this.dialogRepairData = row.id
+      this.dialogRepair = true
     },
     // 分页：每页条数变化
     handleSizeChange(val) {
@@ -190,6 +290,56 @@ export default {
     // 判断表格标签状态
     CheckState(state) {
       return state ? 'success' : 'danger'
+    },
+    // 格式化表格数据 用户导出
+    formatJson(list) {
+      const map = {
+        id: '编号',
+        semester: '学期',
+        checkDate: '检查日期',
+        labNumber: '房楼位置',
+        managerName: '小负责人名称',
+        cleanliness: '清洁情况',
+        doorsAndWindows: '门窗状况',
+        electricalLines: '电线状态',
+        fireSafetyEquipmentAvailable: '消防设备是否可以用',
+        fireSafetyEquipmentExpiry: '消防设备是否已过有效期',
+        instrumentEquipmentIntact: '仪器设备完整性',
+        instrumentEquipmentWorking: '仪器设备是否可以正常工作',
+        instrumentWarningLabelsIntact: '仪器设备标签是否完成',
+        otherSafetyHazards: '其他安全隐患',
+        otherHazards: '其他危害',
+        state: '状态'
+      }
+
+      this.tHeader = Object.values(map)
+      return list.map(item => {
+        return Object.keys(map).map(key => {
+          return item[key]
+        })
+      })
+    },
+    // 导出excel
+    handleDownload() {
+      this.downloadLoading = true
+      import('@/vendor/Export2Excel').then(excel => {
+        const list = this.excelData
+        // 格式化表体
+        const data = this.formatJson(list)
+        // 格式化表头
+        const tHeader = this.tHeader
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: '日志记录',
+          autoWidth: this.autoWidth,
+          bookType: this.bookType
+        })
+        this.downloadLoading = false
+      })
+    },
+    handleDataFromChild(updata) {
+      this.dialogadd = false
     }
   }
 }

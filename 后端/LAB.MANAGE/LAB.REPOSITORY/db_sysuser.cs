@@ -58,7 +58,9 @@ namespace LAB.REPOSITORY
                     // 判断角色真实性
                     var CID = _ctx.Academys.Where(c => c.Id == addUser.CID).FirstOrDefault();
                     var RID = _ctx.Roles.Where(c => c.Id == addUser.RID).FirstOrDefault();
-                    if (RID == null || CID == null) throw new Exception();// 如果角色不存在则判断该角色是个假数据
+                    var user = _ctx.SysUsers.Where(c=>c.LoginName == addUser.LoginName).FirstOrDefault();
+                    if (RID == null || CID==null) throw new Exception("服务器错误");// 如果角色不存在则判断该角色是个假数据
+                    if (user != null) throw new Exception("此用户名已存在请重新创建");
 
                     var sysuser = new LAB.MODEL.SysUser();
                     sysuser.UserName = addUser.UserName;
@@ -66,6 +68,7 @@ namespace LAB.REPOSITORY
                     sysuser.Email = addUser.Email;
                     sysuser.Password = addUser.Password;
                     sysuser.Phone = addUser.Phone;
+                    sysuser.Sex = addUser.Sex;
                     sysuser.CID = addUser.CID;
 
                     _ctx.SysUsers.Add(sysuser);

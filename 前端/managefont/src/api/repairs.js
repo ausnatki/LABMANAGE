@@ -11,7 +11,7 @@ export function GetAllRepairs() {
 // 通过维修人员获取列表
 export function GetRepairsByUser(UID) {
   return request({
-    url: '/api/Repairs/GetRepairsByUser',
+    url: '/Lab/Repairs/GetRepairsByUser',
     method: 'get',
     params: { UID }
   })

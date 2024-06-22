@@ -3,6 +3,7 @@ using LAB.MODEL;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -104,7 +105,29 @@ namespace LAB.REPOSITORY
         {
             try
             {
-                var list = _ctx.DailySafetyChecks.Where(c => c.LabID == LID && c.IsDel == false).ToList();
+                var list = _ctx.DailySafetyChecks.Where(c => c.LabID == LID && c.IsDel == false).Select(c => new
+                {
+                    Id = c.Id,
+                    LabID = c.LabID,
+                    SemesterID = c.SemesterID,
+                    Semester = c.Semesters.Name,
+                    UID = c.UID,
+                    CheckDate = c.CheckDate,
+                    Cleanliness = c.Cleanliness,
+                    DoorsAndWindows = c.DoorsAndWindows,
+                    ElectricalLines = c.ElectricalLines,
+                    FireSafetyEquipmentAvailable = c.FireSafetyEquipmentAvailable,
+                    FireSafetyEquipmentExpiry = c.FireSafetyEquipmentExpiry,
+                    InstrumentEquipmentIntact = c.InstrumentEquipmentIntact,
+                    InstrumentEquipmentWorking = c.InstrumentEquipmentWorking,
+                    InstrumentWarningLabelsIntact = c.InstrumentWarningLabelsIntact,
+                    OtherHazards = c.OtherHazards,
+                    OtherSafetyHazards = c.OtherSafetyHazards,
+                    IsDel = c.IsDel,
+                    State = c.State,
+                    LabNumber = c.Laboratories.LabNumber,
+                    ManagerName = c.SysUser.UserName
+                }).ToList();
                 return list;
             }
             catch
@@ -129,7 +152,7 @@ namespace LAB.REPOSITORY
                     DLabId = c.DLabID,
                     RepairDate = c.RepairDate, // 维修时间
                     IssuesFound = c.IssuesFound, // 错误信息
-                    Suggestions = c.Suggestions,// 维修建议
+                    Suggestions = c.Suggestions !=null?c.Suggestions:"无",// 维修建议
                     RepairPersonnelId = c.RepairPersonnelID, // 维修人员
                     ComletionStatus = c.ComletionStatus, // 是否完成
                     Remark = c.Remarks, // 备注
@@ -153,14 +176,15 @@ namespace LAB.REPOSITORY
             {
                 var list = _ctx.labInclidentHandings.Where(c => c.dailySafetyChecks.LabID == LID && c.IsDel == false).Select(c => new
                 {
+                    LabNumber = c.dailySafetyChecks.Laboratories.LabNumber,
                     Id = c.Id,
-                    DLabID = c.DLabID,
-                    IncidentDetails = c.IncidentDetails, // 事件详情
-                    RepairPersonnelID = c.RepairPersonnelID,// 维修人员id
-                    ReportedById = c.ReportedByID,// 上报人员
-                    InclidentTime = c.InclidentTime, // 维修时间
-                    IsDel = c.IsDel,
-                    LabNumber = _ctx.Laboratories.Where(x => x.Id == LID).Select(c => c.LabNumber).FirstOrDefault(), // 实验室id
+                    IncidentDetails = c.IncidentDetails, // 异常错误信息
+                    RepairPersonnelID = c.RepairPersonnelID,
+                    RepairName = _ctx.SysUsers.Where(x => x.Id == c.RepairPersonnelID).Select(c => c.UserName).FirstOrDefault(),
+                    ReportedByID = c.ReportedByID,
+                    ReportedName = _ctx.SysUsers.Where(x => x.Id == c.ReportedByID).Select(c => c.UserName).FirstOrDefault(),
+                    InclidentTime = c.InclidentTime,
+                    Semesters = c.dailySafetyChecks.Semesters.Name
                 }).ToList();
                 return list;
             }
@@ -422,5 +446,96 @@ namespace LAB.REPOSITORY
         }
         #endregion
 
+        #region 通过日志记录获取异常信息
+        public IEnumerable<object> GetHandingByDaily(int DLID)
+        {
+            try 
+            {
+                var list = _ctx.labInclidentHandings.Where(c=>c.DLabID == DLID).Select(c => new
+                {
+                    LabNumber = c.dailySafetyChecks.Laboratories.LabNumber,
+                    Id = c.Id,
+                    IncidentDetails = c.IncidentDetails, // 异常错误信息
+                    RepairPersonnelID = c.RepairPersonnelID,
+                    RepairName = _ctx.SysUsers.Where(x => x.Id == c.RepairPersonnelID).Select(c => c.UserName).FirstOrDefault(),
+                    ReportedByID = c.ReportedByID,
+                    ReportedName = _ctx.SysUsers.Where(x => x.Id == c.ReportedByID).Select(c => c.UserName).FirstOrDefault(),
+                    InclidentTime = c.InclidentTime,
+                    Semesters = c.dailySafetyChecks.Semesters.Name
+                }).ToList();
+                return list;
+            }
+            catch 
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 通过日志记录获取维修信息
+        public IEnumerable<object> GetRepairByDaily(int DLID)
+        {
+            try
+            {
+                var list = _ctx.LabEquipmentRepairs.Where(c => c.DLabID == DLID).Select(c => new
+                {
+                    Id = c.Id,
+                    DLabID = c.DLabID,
+                    LabNumber = c.dailySafetyChecks.Laboratories.LabNumber,
+                    RepairDate = c.RepairDate,
+                    IssuesFound = c.IssuesFound,
+                    RepairPersonnelID = c.RepairPersonnelID,
+                    RepairName = _ctx.SysUsers.Where(x => x.Id == c.RepairPersonnelID).Select(c => c.UserName).FirstOrDefault(),
+                    ComletionStatus = c.ComletionStatus,
+                    Remarks = c.Remarks,
+                }).ToList();
+                return list;
+            }
+            
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 实验室日志页面的初始信息
+        public IEnumerable<object> GetNotifyInitdata(int UID)
+        {
+            try
+            {
+                // 获取当前日期
+                DateTime today = DateTime.Today;
+
+                // 查询实验室管理人员管理的所有实验室
+                var managedLabs = _ctx.Laboratories
+                    .Where(lab => lab.LabAssignments.Any(assignment => assignment.UserID == UID) && !lab.IsDel)
+                    .ToList();
+
+                // 查询今天的日志记录
+                var todayChecks = _ctx.DailySafetyChecks
+                    .Where(check => check.UID == UID && check.CheckDate.Date == today && !check.IsDel)
+                    .Select(check => check.LabID)
+                    .ToList();
+
+                // 查询没有检查的实验室
+                var uncheckedLabs = managedLabs
+                    .Where(lab => !todayChecks.Contains(lab.Id))
+                    .Select(lab => new
+                    {
+                        LabName = lab.LabNumber,
+                        LabID = lab.Id
+                    })
+                    .ToList();
+
+                return uncheckedLabs;
+            }
+            catch (Exception ex)
+            {
+                // 捕获并处理异常，可以记录日志或其他处理方式
+                throw new Exception("Error occurred while retrieving data: " + ex.Message);
+            }
+        }
+        #endregion
     }
 }

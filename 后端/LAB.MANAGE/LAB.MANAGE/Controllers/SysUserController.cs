@@ -64,7 +64,7 @@ namespace LAB.MANAGE.Controllers
             else
             {
                 result.Code = 501;
-                result.Msg = "添加失败";
+                result.Msg = "用户已存在或者服务器错误";
                 result.Result = false;
                 return result;
             }

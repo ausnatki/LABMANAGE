@@ -26,7 +26,6 @@
       <el-table-column prop="repairName" label="维修人" />
       <el-table-column prop="reportedName" label="上报人" />
       <el-table-column prop="inclidentTime" label="上报时间" />
-      <el-table-column prop="semesters" label="学期" />
       <el-table-column label="操作" width="150">
         <template slot-scope="scope">
           <el-link type="primary" icon="el-icon-user" @click="handleAssign(scope.row)">分配维修人员</el-link>
@@ -60,8 +59,9 @@
 </template>
 
 <script>
-import { GetAllHanding } from '@/api/handing.js'
+import { GetAllHanding, GetHandingByUser } from '@/api/handing.js'
 import AssignDialogVue from '@/views/handing/components/AssignDailog.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'LogPage',
@@ -74,6 +74,7 @@ export default {
       isLoading: false,
       dialogAssign: false,
       dialogdata: {},
+      tHeader: '',
       searchLabNumber: '', // 搜索关键字
       currentPage: 1, // 当前页码
       pageSize: 10 // 每页的数据条数
@@ -84,13 +85,15 @@ export default {
     filteredData() {
       let filtered = this.tableData
       const labNumber = this.searchLabNumber.trim()
-
       if (labNumber) {
         filtered = filtered.filter(item => item.labNumber.includes(labNumber))
       }
-
       return filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
-    }
+    },
+    ...mapGetters([
+      'roles',
+      'uid'
+    ])
   },
   watch: {
     dialogAssign(newVal) {
@@ -104,16 +107,29 @@ export default {
     // 初始化数据 获取全部的日志信息
     initData() {
       this.isLoading = true
-      GetAllHanding().then(result => {
-        this.tableData = result.data
-      }).catch(response => {
-        this.$message({
-          type: 'error',
-          message: response.msg
+      if (this.roles.includes('admin')) {
+        GetAllHanding().then(result => {
+          this.tableData = result.data
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        }).finally(() => {
+          this.isLoading = false
         })
-      }).finally(() => {
-        this.isLoading = false
-      })
+      } else {
+        GetHandingByUser(this.uid).then(result => {
+          this.tableData = result.data
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        }).finally(() => {
+          this.isLoading = false
+        })
+      }
     },
     // 搜索操作
     handleSearch() {
@@ -125,11 +141,6 @@ export default {
       this.dialogdata = row
       this.dialogAssign = true
     },
-    // 导出数据
-    handleExport() {
-      // TODO: 实现导出数据的逻辑
-      console.log('Export data')
-    },
     // 分页：每页条数变化
     handleSizeChange(val) {
       this.pageSize = val
@@ -137,6 +148,49 @@ export default {
     // 分页：当前页变化
     handleCurrentChange(val) {
       this.currentPage = val
+    },
+    // 异常数据初始化
+    fromatHandingData(list) {
+      console.log(list)
+      const map = {
+        id: '编号',
+        labNumber: '实验室名称',
+        inclidentTime: '上报时间',
+        incidentDetails: '问题',
+        repairName: '维修人员',
+        reportedName: '上报人员',
+        semesters: '学期'
+      }
+
+      this.tHeader = Object.values(map)
+      return list.map(item => {
+        return Object.keys(map).map(key => {
+          if (key === 'inclidentTime') {
+            // 格式化日期
+            return new Date(item[key]).toLocaleDateString()
+          }
+          return item[key]
+        })
+      })
+    },
+    // 导出excel
+    handleExport() {
+      this.downloadLoading = true
+      import('@/vendor/Export2Excel').then(excel => {
+        const list = this.filteredData
+        // 格式化表体
+        const data = this.fromatHandingData(list)
+        // 格式化表头
+        const tHeader = this.tHeader
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: '异常',
+          autoWidth: this.autoWidth,
+          bookType: this.bookType
+        })
+        this.downloadLoading = false
+      })
     }
   }
 }

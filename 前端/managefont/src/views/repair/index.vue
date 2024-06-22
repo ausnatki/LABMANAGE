@@ -66,7 +66,8 @@
 
 <script>
 import EditLogDialog from '@/views/repair/components/EditLogDialog.vue'
-import { GetAllRepairs } from '@/api/repairs.js'
+import { GetAllRepairs, GetRepairsByUser } from '@/api/repairs.js'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'LogPage',
@@ -79,6 +80,7 @@ export default {
       isLoading: true,
       dialogdata: {},
       dialogAssign: false,
+      tHeader: '',
       searchLabNumber: '', // 搜索关键字
       currentPage: 1, // 当前页码
       pageSize: 10 // 每页的数据条数
@@ -95,7 +97,11 @@ export default {
       }
 
       return filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
-    }
+    },
+    ...mapGetters([
+      'roles',
+      'uid'
+    ])
   },
   mounted() {
     this.initData()
@@ -104,16 +110,29 @@ export default {
     // 初始化数据 获取全部的日志信息
     initData() {
       this.isLoading = true
-      GetAllRepairs().then(result => {
-        this.tableData = result.data
-      }).catch(response => {
-        this.$message({
-          type: 'error',
-          message: response.msg
+      if (this.roles.includes('admin')) {
+        GetAllRepairs().then(result => {
+          this.tableData = result.data
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        }).finally(() => {
+          this.isLoading = false
         })
-      }).finally(() => {
-        this.isLoading = false
-      })
+      } else {
+        GetRepairsByUser(this.uid).then(result => {
+          this.tableData = result.data
+        }).catch(response => {
+          this.$message({
+            type: 'error',
+            message: response.msg
+          })
+        }).finally(() => {
+          this.isLoading = false
+        })
+      }
     },
     // 搜索操作
     handleSearch() {
@@ -125,17 +144,12 @@ export default {
       this.dialogdata = { ...row }
       this.dialogAssign = true
     },
-    // 导出数据
-    handleExportData() {
-      // TODO: 实现导出数据的逻辑
-      console.log('Export data')
-    },
-    // 保存操作
-    handleSave(data) {
-      // TODO: 实现保存数据的逻辑
-      console.log('Save data', data)
-      this.dialogAssign = false
-    },
+    // // 保存操作
+    // handleSave(data) {
+    //   // TODO: 实现保存数据的逻辑
+    //   console.log('Save data', data)
+    //   this.dialogAssign = false
+    // },
     // 分页：每页条数变化
     handleSizeChange(val) {
       this.pageSize = val
@@ -143,6 +157,45 @@ export default {
     // 分页：当前页变化
     handleCurrentChange(val) {
       this.currentPage = val
+    },
+    // 格式化表格数据 用户导出
+    formatJson(list) {
+      console.log('dasda' + list)
+      const map = {
+        id: '编号',
+        labNumber: '实验室名称',
+        repairDate: '维修时间',
+        issuesFound: '问题',
+        repairName: '维修人员',
+        comletionStatus: '完成状态',
+        remarks: '备注'
+      }
+
+      this.tHeader = Object.values(map)
+      return list.map(item => {
+        return Object.keys(map).map(key => {
+          return item[key]
+        })
+      })
+    },
+    // 导出excel
+    handleExportData() {
+      this.downloadLoading = true
+      import('@/vendor/Export2Excel').then(excel => {
+        const list = this.filteredData
+        // 格式化表体
+        const data = this.formatJson(list)
+        // 格式化表头
+        const tHeader = this.tHeader
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: '维修记录',
+          autoWidth: this.autoWidth,
+          bookType: this.bookType
+        })
+        this.downloadLoading = false
+      })
     }
   }
 }

@@ -60,9 +60,20 @@
       @current-change="handleCurrentChange"
     />
 
+    <!-- 查看日志弹出层 -->
+    <el-dialog
+      title="日志数据"
+      :visible.sync="dialogCheck"
+      width="70%"
+    >
+      <template v-if="dialogCheck">
+        <CheckDialog :dialogdata.sync="dialogdata" />
+      </template>
+    </el-dialog>
+
     <!-- 分配人员弹出层 -->
     <el-dialog
-      title="提示"
+      title="分配人员"
       :visible.sync="dialogAssign"
       width="30%"
     >
@@ -76,18 +87,23 @@
 
 <script>
 import { GetList, ChangeState } from '@/api/laboratories.js'
+import { GetRepairByLab, GetHandingByLab } from '@/api/dailSafetyCheck.js'
 import AssignDialogVue from '@/views/laboratories/components/AssignDialog.vue'
+import CheckDialog from '@/views/laboratories/components/checkDialog.vue'
 export default {
   name: 'LabPage',
   components: {
-    AssignDialogVue
+    AssignDialogVue,
+    CheckDialog
   },
   data() {
     return {
       tableData: [], // 学院数据
       isLoading: true,
       dialogAssign: false,
+      dialogCheck: false,
       dialogdata: {},
+      tHeader: '',
       searchName: '', // 搜索关键字
       currentPage: 1, // 当前页码
       pageSize: 10 // 每页的数据条数
@@ -139,7 +155,8 @@ export default {
     },
     // 查看实验室历史检查记录
     handleView(row) {
-
+      this.dialogdata = row.id
+      this.dialogCheck = true
     },
     // 修改状态（启用/停用）
     handleChangeState(id) {
@@ -170,13 +187,110 @@ export default {
     },
     // 导出异常数据
     handleExportError(row) {
-      // TODO: 实现导出异常数据的逻辑
-      console.log('Export error data for academy:', row)
+      GetHandingByLab(row.id).then(result => {
+        this.downloadLoading = true
+        import('@/vendor/Export2Excel').then(excel => {
+          const list = result.data
+          const tfilename = row.name
+          // 格式化表体
+          const data = this.fromatHandingData(list)
+          // 格式化表头
+          const tHeader = this.tHeader
+          excel.export_json_to_excel({
+            header: tHeader,
+            data,
+            filename: tfilename + '维修记录',
+            autoWidth: this.autoWidth,
+            bookType: this.bookType
+          })
+          this.downloadLoading = false
+        })
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: '导出失败'
+        })
+      })
     },
-    // 导出维修数据
+    // 维修记录导出
     handleExportRepair(row) {
-      // TODO: 实现导出维修数据的逻辑
-      console.log('Export repair data for academy:', row)
+      GetRepairByLab(row.id).then(result => {
+        this.downloadLoading = true
+        import('@/vendor/Export2Excel').then(excel => {
+          const list = result.data
+          const tfilename = row.name
+          // 格式化表体
+          const data = this.fromatReparsData(list)
+          // 格式化表头
+          const tHeader = this.tHeader
+          excel.export_json_to_excel({
+            header: tHeader,
+            data,
+            filename: tfilename + '维修记录',
+            autoWidth: this.autoWidth,
+            bookType: this.bookType
+          })
+          this.downloadLoading = false
+        })
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: '导出失败'
+        })
+      })
+    },
+    // 维修记录格式化
+    fromatReparsData(list) {
+      console.log(list)
+      const map = {
+        id: '编号',
+        labName: '实验室名称',
+        repairDate: '维修时间',
+        issuesFound: '问题',
+        repairPersonnelName: '维修人员',
+        suggestions: '实施建议',
+        comletionStatus: '完成状态',
+        remark: '备注'
+      }
+
+      this.tHeader = Object.values(map)
+      return list.map(item => {
+        return Object.keys(map).map(key => {
+          if (key === 'repairDate') {
+            // 格式化日期
+            return new Date(item[key]).toLocaleDateString()
+          }
+          if (key === 'comletionStatus') {
+            // 格式化日期
+            return item[key] ? '完成' : '未完成'
+          }
+          return item[key]
+        })
+      })
+    },
+    // 异常数据初始化
+    fromatHandingData(list) {
+      console.log(list)
+      const map = {
+        id: '编号',
+        labNumber: '实验室名称',
+        inclidentTime: '上报时间',
+        incidentDetails: '问题',
+        repairName: '维修人员',
+        reportedName: '上报人员',
+        semesters: '学期'
+      }
+
+      this.tHeader = Object.values(map)
+      return list.map(item => {
+        return Object.keys(map).map(key => {
+          if (key === 'inclidentTime') {
+            // 格式化日期
+            return new Date(item[key]).toLocaleDateString()
+          }
+          return item[key]
+        })
+      })
     }
   }
 }

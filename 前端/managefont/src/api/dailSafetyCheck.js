@@ -70,3 +70,41 @@ export function UpdataRepairs(data) {
     data
   })
 }
+
+// 通过日志获取维修记录
+export function GetRepairByDaily(DLID) {
+  return request({
+    url: '/Lab/DailSafetyCheck/GetRepairByDaily',
+    method: 'get',
+    params: { DLID }
+  })
+}
+
+// 通过日志获取异常记录
+export function GetHandingByDaily(DLID) {
+  return request({
+    url: '/Lab/DailSafetyCheck/GetHandingByDaily',
+    method: 'get',
+    params: { DLID }
+  })
+}
+
+// 通过日志获取异常记录
+export function GetDailyCheckByUser(UID) {
+  return request({
+    url: '/Lab/DailSafetyCheck/GetDailyCheckByUser',
+    method: 'get',
+    params: { UID }
+  })
+}
+
+// 通过日志获取异常记录
+export function GetNotifyInitdata(UID) {
+  return request({
+    url: '/Lab/DailSafetyCheck/GetNotifyInitdata',
+    method: 'get',
+    params: { UID }
+  })
+}
+
+// GetDailyCheckByUser
