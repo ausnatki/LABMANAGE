@@ -69,5 +69,12 @@ export function GetRepairs() {
   })
 }
 
+export function GetDash() {
+  return request({
+    url: '/Lab/SysUser/GetDash',
+    method: 'get'
+  })
+}
+
 // AssignMent
 // GetByAcademy

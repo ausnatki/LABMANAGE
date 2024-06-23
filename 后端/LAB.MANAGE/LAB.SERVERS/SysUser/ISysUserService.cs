@@ -16,5 +16,7 @@ namespace LAB.SERVERS
         public IEnumerable<object> GetByAcademy(int CID);
 
         public IEnumerable<object> GetRepairs();
+
+        public object GetDash();
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,8 @@ namespace LAB.REPOSITORY
                     Name = c.Name,
                     IsDel = c.IsDel,
                     Number = c.Number,
+                    Lng = c.Lng,
+                    Lat = c.Lat,
                 }).ToList();
                 return list;
             }
@@ -45,6 +48,7 @@ namespace LAB.REPOSITORY
                 try 
                 {
                     // 检查数据真实性
+                    if(singleBuilding.Name == null) { return false; }
                     _ctx.SingleBuilding.Add(singleBuilding);
                     _ctx.SaveChanges();
                     transaction.Commit();

@@ -5,80 +5,48 @@
     <el-button type="primary" @click="ClickSerchName">搜索</el-button>
 
     <!-- 添加用户信息 -->
-    <el-button type="warning" style="margin-left:20px" @click="ClickAdd()">添加学期名</el-button>
+    <el-button type="warning" style="margin-left:20px" @click="openAddDialog">添加学期名</el-button>
 
     <!-- 表格部分 -->
-    <el-table
-      v-loading="isLoading"
-      :data="filteredData"
-      border
-      style="width: 100%"
-    >
-      <el-table-column
-        label="编号"
-      >
-        <template slot-scope="scope">
-          {{ scope.$index+1 }}
-        </template>
+    <el-table v-loading="isLoading" :data="filteredData" border style="width: 100%">
+      <el-table-column label="编号">
+        <template slot-scope="scope">{{ scope.$index + 1 }}</template>
       </el-table-column>
-      <el-table-column
-        prop="name"
-        label="楼房名称"
-      />
-      <el-table-column
-        prop="number"
-        label="楼房层数"
-      >
+      <el-table-column prop="name" label="楼房名称" />
+      <el-table-column prop="number" label="楼房层数">
         <template slot-scope="scope">
           <el-tag>{{ scope.row.number }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        prop="isDel"
-        label="是否启用"
-      >
+      <el-table-column prop="isDel" label="是否启用">
         <template slot-scope="scope">
-          <el-switch
-            v-model="scope.row.isDel"
-            active-color="#13ce66"
-            inactive-color="#ff4949"
-            :loading="ButtonLoading"
-            @change="changeState(scope.row.id)"
-          />
+          <el-switch v-model="scope.row.isDel" active-color="#13ce66" inactive-color="#ff4949" :loading="ButtonLoading" @change="changeState(scope.row.id)" />
         </template>
       </el-table-column>
-      <el-table-column
-        label="操作"
-      >
+      <el-table-column label="操作">
         <template slot-scope="scope">
           <el-link type="primary" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
           <el-link type="primary" style="margin-right:10px" @click="ClickAddFloor(scope.row.id)">添加楼层</el-link>
         </template>
       </el-table-column>
-
     </el-table>
 
     <!-- 这里是我的分页组件 -->
-    <el-pagination
-      align="center"
-      :current-page="currentPage"
-      :page-sizes="[1, 5, 10, 20]"
-      :page-size="pageSize"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="tableData.length"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    />
+    <el-pagination align="center" :current-page="currentPage" :page-sizes="[1, 5, 10, 20]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="tableData.length" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
 
+    <!-- 添加楼层的对话框 -->
+    <AddFloorDialog :visible.sync="addDialogVisible" @submit="submitAdd" />
   </div>
 </template>
-
 <script>
 import { AddBuilder, GetAllList, EditBuilder, ChangeState } from '@/api/building'
 import { AddFloor } from '@/api/floor.js'
+import AddFloorDialog from '@/views/builder/components/addDialog.vue' // 导入新组件
 export default {
   name: 'BuilderPage',
-
+  components: {
+    AddFloorDialog
+  },
   data() {
     return {
       tableData: [],
@@ -88,7 +56,8 @@ export default {
       dialogEdit: false,
       currentPage: 1, // 当前页码
       total: 20, // 总条数
-      pageSize: 10 // 每页的数据条数
+      pageSize: 10, // 每页的数据条数
+      addDialogVisible: false // 控制对话框的显示
     }
   },
   computed: {
@@ -114,40 +83,32 @@ export default {
     this.InitData()
   },
   methods: {
-  // 点击添加
-    ClickAdd() {
-      this.$prompt('请输入楼层名称', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        inputPattern: /^(?!\s*$).+/,
-        inputErrorMessage: '楼层名称不能为空'
-      }).then(async({ value }) => {
-        const data = {
-          id: 0,
-          name: value,
-          isDel: false,
-          number: 0
-        }
-        try {
-          const result = AddBuilder(data)
-          console.log(result)
-          this.tableData.push(data) // Add new item to tableData
-          this.$message({
-            type: 'success',
-            message: result.msg
-          })
-        } catch (response) {
-          this.$message({
-            type: 'error',
-            message: response.msg
-          })
-        }
-      }).catch(() => {
+    // 打开添加对话框
+    openAddDialog() {
+      this.addDialogVisible = true
+    },
+    // 提交添加表单
+    async submitAdd(form) {
+      const data = {
+        id: 0,
+        ...form,
+        isDel: false
+      }
+      try {
+        console.log(data)
+        const result = await AddBuilder(data)
+        this.tableData.push(data) // Add new item to tableData
         this.$message({
-          type: 'info',
-          message: '取消输入'
+          type: 'success',
+          message: result.msg
         })
-      })
+        this.addDialogVisible = false // 关闭对话框
+      } catch (response) {
+        this.$message({
+          type: 'error',
+          message: response.msg
+        })
+      }
     },
     // 点击修改
     ClickEdit(data) {

@@ -106,5 +106,20 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 获取显示数据
+        public object GetDash() 
+        {
+            try 
+            {
+                return db_Sysuser.GetDash();    
+            }
+            catch 
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+
     }
 }

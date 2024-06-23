@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace LAB.REPOSITORY
 {
@@ -179,6 +180,24 @@ namespace LAB.REPOSITORY
                 return list;
             }
             catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+        #region 获取显示屏数据
+        public object GetDash()
+        {
+            try 
+            {
+                var list =new{ bcount =  _ctx.SingleBuilding.Count(),
+                    checkcoutn = _ctx.DailySafetyChecks.Count(),
+                    usercount = _ctx.SysUsers.Count(), 
+                    academycount = _ctx.Academys.Count()};
+                return list;
+            }
+            catch 
             {
                 throw new Exception();
             }

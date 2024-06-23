@@ -2,9 +2,6 @@ import Vue from 'vue'
 
 import BaiduMap from 'vue2-baidu-map'
 
-import VueBMap from 'vue-bmap-gl'
-import 'vue-bmap-gl/dist/style.css'
-
 import Cookies from 'js-cookie'
 
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
@@ -38,12 +35,6 @@ import * as filters from './filters' // global filters
 //   const { mockXHR } = require('../mock')
 //   mockXHR()
 // }
-Vue.use(VueBMap)
-VueBMap.initBMapApiLoader({
-  ak: 'tDPgGh2rlmxPBGeG9MGBB2L2WFn9dx8l',
-  // 默认百度 sdk 版本为 1.0
-  v: '1.0'
-})
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
