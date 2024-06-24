@@ -23,6 +23,11 @@
     <!-- 添加用户信息 -->
     <el-button type="warning" style="margin-left:20px" @click="ClickAdd()">添加用户信息</el-button>
 
+    <!-- 角色筛选 -->
+    <el-checkbox v-model="checked1" label="超级管理员" style="margin-left:20px;padding: 9px 20px 7px 10px;" border />
+    <el-checkbox v-model="checked2" label="实验室管理员" style="margin-left:-10px;padding: 9px 20px 7px 10px;" border />
+    <el-checkbox v-model="checked3" label="维修人员" style="margin-left:-10px;padding: 9px 20px 7px 10px;" border />
+
     <!-- 表格部分 -->
     <el-table
       v-loading="isLoading"
@@ -65,7 +70,7 @@
       :page-sizes="[1, 5, 10, 20]"
       :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="total"
+      :total="tableData.length"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
@@ -93,7 +98,7 @@
 </template>
 
 <script>
-import { GetList } from '@/api/academy.js'
+import { GetSelectCheckList } from '@/api/academy.js'
 import { GetAllList } from '@/api/user.js'
 import EditDialog from '@/views/user/components/editDialog.vue'
 import AddDialog from '@/views/user/components/addDialog.vue'
@@ -116,7 +121,10 @@ export default {
       total: 20, // 总条数
       pageSize: 10, // 每页的数据条数
       options: [],
-      editData: {}
+      editData: {},
+      checked1: '',
+      checked2: '',
+      checked3: ''
     }
   },
   computed: {
@@ -125,6 +133,9 @@ export default {
       let filtered = this.tableData
       const username = this.tserchUsername
       const category = this.serchCategory
+      const checked1 = this.checked1
+      const checked2 = this.checked2
+      const checked3 = this.checked3
       filtered = filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
 
       // console.log(category.length)
@@ -142,7 +153,33 @@ export default {
           return category.includes(item.academy)
         })
       }
-      // console.log(filtered)
+
+      // 假设 roleFilter 是一个包含您想要根据 checked 值来检查的 roleid 的数组
+      const roleFilter = []
+      if (checked1) {
+        // 如果 checked1 为真，我们可能想要包含某些 roleid
+        // 这里假设您想要包含 roleid 为 1 的项（或者根据您的需求进行修改）
+        roleFilter.push(1)
+      }
+      if (checked2) {
+        // 如果 checked2 为真，我们可能想要包含其他 roleid
+        // 这里假设您想要包含 roleid 为 2 的项
+        roleFilter.push(2)
+      }
+      // 如果有 checked3，您可以在这里添加相应的逻辑
+      if (checked3) {
+        roleFilter.push(3)
+      }
+
+      // 使用 includes 方法来检查 roleid 是否在 roleFilter 中
+      filtered = filtered.filter(item => {
+        // 假设 item.role.roleid 是您要比较的 roleid
+        // 如果 roleFilter 为空，表示没有选中任何 checkbox，因此返回 false（即不显示任何项）
+        // 或者如果 item 的 roleid 在 roleFilter 中，就返回 true（即显示该项）
+        return roleFilter.length === 0 || roleFilter.includes(item.roleId) // 修改为 item.role.roleid 或其他适当的属性
+      })
+
+      // console.log(filtered);
       return filtered
     }
   },
@@ -174,7 +211,7 @@ export default {
     },
     // 初始化搜索框选项
     async InitSelect() {
-      await GetList().then(result => {
+      await GetSelectCheckList().then(result => {
         console.log(result)
         this.options = result.data
       }).catch(response => {

@@ -87,5 +87,25 @@ namespace LAB.REPOSITORY
         }
         #endregion
 
+        #region 获取所有学期多选框列表
+        public IEnumerable<object> GetCheckList()
+        {
+            try
+            {
+                var list = Ctx.Semesters.Where(c=>c.IsDel == false).Select(c => new
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    IsDel = c.IsDel
+                }).ToList();
+                return list;
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
     }
 }

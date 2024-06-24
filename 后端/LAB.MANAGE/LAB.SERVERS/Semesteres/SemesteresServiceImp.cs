@@ -61,5 +61,20 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 获取所有多选框列表
+        public IEnumerable<object> GetCheckList()
+        {
+            try
+            {
+                return db_Semesteres.GetCheckList();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
+
     }
 }

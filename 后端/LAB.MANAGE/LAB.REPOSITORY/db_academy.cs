@@ -43,7 +43,7 @@ namespace LAB.REPOSITORY
         {
             try
             {
-                var list = Ctx.Academys.Select(c => new
+                var list = Ctx.Academys.Where(c=>c.IsDel == false).Select(c => new
                 {
                     Id = c.Id,
                     Name = c.Name,

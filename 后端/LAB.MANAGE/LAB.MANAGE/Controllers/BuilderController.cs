@@ -97,5 +97,26 @@ namespace LAB.MANAGE.Controllers
                 return result;
             }
         }
+
+        [HttpGet("GetCheckList")]
+        public LAB.MODEL.ApiResp GetCheckList() 
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Code = 20000;
+                result.Data = builderService.GetCheckList();
+                result.Result = true;
+                result.Msg = "查询列表数据成功";
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "查询列表失败";
+                result.Result = false;
+                return result;
+            }
+        }
     }
 }

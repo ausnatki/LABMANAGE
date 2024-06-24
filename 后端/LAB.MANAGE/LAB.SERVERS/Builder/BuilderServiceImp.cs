@@ -74,5 +74,19 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 获取楼层选择框列表
+        public IEnumerable<object> GetCheckList() 
+        {
+            try
+            {
+                return db_Builder.GetCheckList();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
+
     }
 }

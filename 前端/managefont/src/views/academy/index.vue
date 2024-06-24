@@ -43,7 +43,7 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-link type="primary" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
+          <el-link type="primary" icon="el-icon-edit" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
         </template>
       </el-table-column>
 

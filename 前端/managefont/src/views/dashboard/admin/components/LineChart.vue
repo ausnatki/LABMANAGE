@@ -5,7 +5,7 @@
         v-for="building in mybuild"
         :key="building.id"
         :position="{ lng: parseFloat(building.lng), lat: parseFloat(building.lat) }"
-        raise-on-drag="true"
+        :raise-on-drag="true"
         :dragging="true"
         @click="markerClick(building)"
         @dragend="dragendClick(building, $event)"
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { GetAllList } from '@/api/building.js'
+import { GetCheckList } from '@/api/building.js'
 import BuildingInfoCard from '@/views/ditu/dialogview.vue'
 
 export default {
@@ -76,7 +76,7 @@ export default {
       this.selectedBuilding = null
     },
     initData() {
-      GetAllList().then(result => {
+      GetCheckList().then(result => {
         this.mybuild = result.data
       }).catch(response => {
         this.$message({

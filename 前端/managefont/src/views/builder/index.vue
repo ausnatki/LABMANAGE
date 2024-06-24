@@ -5,7 +5,7 @@
     <el-button type="primary" @click="ClickSerchName">搜索</el-button>
 
     <!-- 添加用户信息 -->
-    <el-button type="warning" style="margin-left:20px" @click="openAddDialog">添加学期名</el-button>
+    <el-button type="warning" style="margin-left:20px" @click="openAddDialog">添加大楼</el-button>
 
     <!-- 表格部分 -->
     <el-table v-loading="isLoading" :data="filteredData" border style="width: 100%">
@@ -20,13 +20,13 @@
       </el-table-column>
       <el-table-column prop="isDel" label="是否启用">
         <template slot-scope="scope">
-          <el-switch v-model="scope.row.isDel" active-color="#13ce66" inactive-color="#ff4949" :loading="ButtonLoading" @change="changeState(scope.row.id)" />
+          <el-switch v-model="scope.row.isDel" active-color="#13ce66" inactive-color="#ff4949" @change="changeState(scope.row.id)" />
         </template>
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-link type="primary" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
-          <el-link type="primary" style="margin-right:10px" @click="ClickAddFloor(scope.row.id)">添加楼层</el-link>
+          <el-link type="danger" icon="el-icon-view" style="margin-right:10px" @click="ClickEdit(scope.row)">修改</el-link>
+          <el-link type="primary" icon="el-icon-edit" style="margin-right:10px" @click="ClickAddFloor(scope.row.id)">添加楼层</el-link>
         </template>
       </el-table-column>
     </el-table>
@@ -36,16 +36,25 @@
 
     <!-- 添加楼层的对话框 -->
     <AddFloorDialog :visible.sync="addDialogVisible" @submit="submitAdd" />
+
+    <!-- 修改楼层的弹出框 -->
+    <el-dialog title="修改楼层" :visible.sync="editDialogVisible">
+      <template v-if="editDialogVisible">
+        <EditFloorDialog :editata.sync="editData" @submit="ChangeSuccess" />
+      </template>
+    </el-dialog>
   </div>
 </template>
 <script>
 import { AddBuilder, GetAllList, EditBuilder, ChangeState } from '@/api/building'
 import { AddFloor } from '@/api/floor.js'
 import AddFloorDialog from '@/views/builder/components/addDialog.vue' // 导入新组件
+import EditFloorDialog from '@/views/builder/components/editDialog.vue'
 export default {
   name: 'BuilderPage',
   components: {
-    AddFloorDialog
+    AddFloorDialog,
+    EditFloorDialog
   },
   data() {
     return {
@@ -53,11 +62,13 @@ export default {
       isLoading: true,
       serchname: '',
       tserchname: '',
+      editData: {},
       dialogEdit: false,
       currentPage: 1, // 当前页码
       total: 20, // 总条数
       pageSize: 10, // 每页的数据条数
-      addDialogVisible: false // 控制对话框的显示
+      addDialogVisible: false, // 控制对话框的显示
+      editDialogVisible: false
     }
   },
   computed: {
@@ -111,23 +122,14 @@ export default {
       }
     },
     // 点击修改
-    ClickEdit(data) {
-      this.dialogEdit = true
-      this.$prompt('请输入楼房名称', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        inputPattern: /^(?!\s*$).+/,
-        inputErrorMessage: '请输入修改后的名称',
-        inputValue: data.name
-      }).then(({ value }) => {
-        data.name = value
-        this.EditBuilder(data)
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '取消输入'
-        })
-      })
+    async ClickEdit(data) {
+      this.editData = data
+      this.editDialogVisible = true
+    },
+    // 点击修改后的监控变化的函数
+    ChangeSuccess() {
+      this.InitData()
+      this.editDialogVisible = false
     },
     // 初始化数据
     InitData() {
@@ -203,7 +205,6 @@ export default {
     },
     // 点击状态开关的选项
     changeState(BID) {
-      this.ButtonLoading = true
       ChangeState(BID).then(result => {
         this.$message({
           type: 'success',
@@ -215,7 +216,7 @@ export default {
           })
         })
       }).finally(() => {
-        this.ButtonLoading = false
+
       })
     }
   }

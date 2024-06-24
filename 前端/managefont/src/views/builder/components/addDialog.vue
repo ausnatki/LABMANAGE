@@ -6,9 +6,7 @@
       </el-form-item>
       <!-- 这里可以添加更多的输入项 -->
       <baidu-map class="map" :center="center" :scroll-wheel-zoom="true" :zoom="19">
-        <bm-marker raise-on-drag="true" :position="markerPosition" :dragging="true" @dragend="dragendClick">
-          <bm-info-window :show="show" @close="infoWindowClose" @open="infoWindowOpen">我爱北京天安门</bm-info-window>
-        </bm-marker>
+        <bm-marker :raise-on-drag="true" :position="markerPosition" :dragging="true" @dragend="dragendClick" />
       </baidu-map>
       <el-form-item label="楼房坐标" :label-width="formLabelWidth">
         <el-row :gutter="20">

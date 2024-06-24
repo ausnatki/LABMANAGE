@@ -5,6 +5,22 @@
     <!-- <el-button type="primary" @click="handleSearch">搜索</el-button> -->
     <el-button type="primary" @click="handleDownload">导出数据</el-button>
 
+    <!-- 这里是我的多选框的部分 -->
+    <el-select
+      v-model="serchCategory"
+      multiple
+      collapse-tags
+      style="margin-left: 20px;"
+      placeholder="请选择"
+    >
+      <el-option
+        v-for="item in options"
+        :key="item.id"
+        :label="item.name"
+        :value="item.name"
+      />
+    </el-select>
+
     <!-- 表格部分 -->
     <el-table
       v-loading="isLoading"
@@ -19,7 +35,11 @@
       </el-table-column>
       <el-table-column label="基本检查信息">
         <el-table-column prop="semester" label="学期" width="200" />
-        <el-table-column prop="checkDate" label="检查日期" width="200" />
+        <el-table-column prop="checkDate" label="检查日期" width="200">
+          <template slot-scope="scope">
+            {{ formatDate(scope.row.checkDate) }}
+          </template>
+        </el-table-column>
         <el-table-column prop="labNumber" label="房楼位置" width="200">
           <template slot-scope="scope">
             <el-tag>{{ scope.row.labNumber }}</el-tag>
@@ -126,6 +146,7 @@ import DialogHanding from '@/views/dailSafetyCheck/components/dialogHanding.vue'
 import DialogRepair from '@/views/dailSafetyCheck/components/dialogRepair.vue'
 import DialogAdd from '@/views/dailSafetyCheck/components/addDialog.vue'
 import { GetAllDailyCheck, GetDailyCheckByUser, GetNotifyInitdata } from '@/api/dailSafetyCheck.js'
+import { GetCheckList } from '@/api/semesteres.js'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -149,7 +170,9 @@ export default {
       dialogadd: false,
       dialogHanding: false,
       dialogRepair: false,
-      tHeader: []
+      tHeader: [],
+      options: [],
+      serchCategory: []
     }
   },
   computed: {
@@ -168,12 +191,19 @@ export default {
         otherSafetyHazards: item.otherSafetyHazards || '无',
         state: item.state ? '正常' : '异常'
       }))
-
+      const category = this.serchCategory
       const name = this.searchName.trim()
       if (name) {
         filtered = filtered.filter(item => item.labNumber.includes(name) || item.managerName.includes(name))
       }
 
+      // console.log(filtered)
+      if (category.length) {
+        // console.log('进行我的类别查询')
+        filtered = filtered.filter(item => {
+          return category.includes(item.semester)
+        })
+      }
       return filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
     },
     excelData() {
@@ -217,6 +247,15 @@ export default {
   methods: {
     async initData() {
       this.isLoading = true
+
+      GetCheckList().then(result => {
+        this.options = result.data
+      }).catch(response => {
+        this.$message({
+          type: 'error',
+          message: response.data
+        })
+      })
 
       try {
         if (this.roles.includes('admin')) {
@@ -340,6 +379,16 @@ export default {
     },
     handleDataFromChild(updata) {
       this.dialogadd = false
+    },
+    formatDate(dateString) {
+      const date = new Date(dateString)
+      const year = date.getFullYear()
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const day = String(date.getDate()).padStart(2, '0')
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+      const seconds = String(date.getSeconds()).padStart(2, '0')
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
     }
   }
 }

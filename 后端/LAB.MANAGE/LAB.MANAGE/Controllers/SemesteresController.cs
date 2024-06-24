@@ -23,7 +23,7 @@ namespace LAB.MANAGE.Controllers
         public LAB.MODEL.ApiResp GetAllList()
         {
             var result = new LAB.MODEL.ApiResp();
-            try 
+            try
             {
                 result.Data = semesteresService.GetAllList();
                 result.Code = 20000;
@@ -31,7 +31,7 @@ namespace LAB.MANAGE.Controllers
                 result.Result = true;
                 return result;
             }
-            catch 
+            catch
             {
                 result.Code = 501;
                 result.Msg = "获取列表信息失败";
@@ -46,7 +46,7 @@ namespace LAB.MANAGE.Controllers
         /// <param name="semesters">学期实体</param>
         /// <returns></returns>
         [HttpPost("AddSemesteres")]
-        public LAB.MODEL.ApiResp AddSemesteres([FromBody]LAB.MODEL.Semesters semesters)
+        public LAB.MODEL.ApiResp AddSemesteres([FromBody] LAB.MODEL.Semesters semesters)
         {
             var result = new LAB.MODEL.ApiResp();
             if (semesteresService.AddSemesteres(semesters))
@@ -65,8 +65,13 @@ namespace LAB.MANAGE.Controllers
             }
         }
 
+        /// <summary>
+        /// 修改学期
+        /// </summary>
+        /// <param name="semesters"></param>
+        /// <returns></returns>
         [HttpPost("EditSemesteres")]
-        public LAB.MODEL.ApiResp EditSemesteres([FromBody]LAB.MODEL.Semesters semesters)
+        public LAB.MODEL.ApiResp EditSemesteres([FromBody] LAB.MODEL.Semesters semesters)
         {
             var result = new LAB.MODEL.ApiResp();
             if (semesteresService.EditSemesteres(semesters))
@@ -80,6 +85,32 @@ namespace LAB.MANAGE.Controllers
             {
                 result.Code = 501;
                 result.Msg = "修改学期失败";
+                result.Result = false;
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// 获取所有学期列表
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [HttpGet("GetCheckList")]
+        public LAB.MODEL.ApiResp GetCheckList() 
+        {
+            var result = new LAB.MODEL.ApiResp();
+            try
+            {
+                result.Data = semesteresService.GetCheckList();
+                result.Code = 20000;
+                result.Msg = "获取列表信息成功";
+                result.Result = true;
+                return result;
+            }
+            catch
+            {
+                result.Code = 501;
+                result.Msg = "获取列表信息失败";
                 result.Result = false;
                 return result;
             }

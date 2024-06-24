@@ -12,5 +12,7 @@ namespace LAB.SERVERS
         public bool AddSemesteres(LAB.MODEL.Semesters semesters);
 
         public bool EditSemesteres(LAB.MODEL.Semesters semesters);
+
+        public IEnumerable<object> GetCheckList();
     }
 }

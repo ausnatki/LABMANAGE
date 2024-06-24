@@ -74,6 +74,8 @@ namespace LAB.REPOSITORY
                     var tdata= _ctx.SingleBuilding.Where(c=>c.Id == editing.Id).FirstOrDefault();
                     if (tdata == null) return false;
                     tdata.Name = editing.Name;
+                    tdata.Lng = editing.Lng;
+                    tdata.Lat = editing.Lat;
                     _ctx.SaveChanges();
                     transaction.Commit();
                     return true;
@@ -109,6 +111,29 @@ namespace LAB.REPOSITORY
                     transaction.Rollback();
                     return false;
                 }
+            }
+        }
+        #endregion
+
+        #region 获取楼层选择框列表
+        public IEnumerable<object> GetCheckList()
+        {
+            try
+            {
+                var list = _ctx.SingleBuilding.Where(c=>c.IsDel == false).Select(c => new
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    IsDel = c.IsDel,
+                    Number = c.Number,
+                    Lng = c.Lng,
+                    Lat = c.Lat,
+                }).ToList();
+                return list;
+            }
+            catch
+            {
+                throw new Exception();
             }
         }
         #endregion

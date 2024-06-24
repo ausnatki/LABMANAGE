@@ -3,6 +3,67 @@
   "WorkspaceRootPath": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\builder\\ibuilderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\builder\\builderserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\dailsafetycheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\dailsafetycheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\heathcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\handingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\handingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\semesterescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\semesterescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\semesteres\\isemesteresservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\semesteres\\semesteresserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_semesteres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_academy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\academycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\academycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\consulconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:consulconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\sysusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\sysusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,21 +80,10 @@
       "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_builder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B88B28A-78EC-4029-A7BF-E00A890D1383}|..\\LAB.MODEL\\LAB.MODEL.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.model\\singlebuilding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\buildercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_dailysafetycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\dailsafetycheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\dailsafetycheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5321E66E-B6BC-40C0-B6AD-3E0FDABB6C41}|..\\LAB.SERVERS\\LAB.SERVERS.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.servers\\dailysafetycheck\\dailysafetycheckserviceimp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -60,10 +110,6 @@
       "AbsoluteMoniker": "D:0:0:{7B88B28A-78EC-4029-A7BF-E00A890D1383}|..\\LAB.MODEL\\LAB.MODEL.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.model\\labinclidenthanding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.manage\\controllers\\handingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBAF86B2-054A-445F-8516-DF973BC6F0CC}|LAB.MANAGE.csproj|solutionrelative:controllers\\handingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6EDD204-8AF7-4F4E-A36C-638235777FBB}|..\\LAB.REPOSITORY\\LAB.REPOSITORY.csproj|d:\\git\\lab\\labmanage\\\u540E\u7AEF\\lab.manage\\lab.repository\\db_floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -84,49 +130,230 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BuilderServiceImp.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Builder\\BuilderServiceImp.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Builder\\BuilderServiceImp.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Builder\\BuilderServiceImp.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Builder\\BuilderServiceImp.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAwE0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:24:20.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IBuilderService.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Builder\\IBuilderService.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Builder\\IBuilderService.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Builder\\IBuilderService.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Builder\\IBuilderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:24:19.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ImageController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "Controllers\\ImageController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:21:53.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SemesteresController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SemesteresController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SemesteresController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SemesteresController.cs",
+              "RelativeToolTip": "Controllers\\SemesteresController.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAowHQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:01:20.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HandingController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HandingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HandingController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HandingController.cs",
+              "RelativeToolTip": "Controllers\\HandingController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T17:25:34.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "HeathCheckController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HeathCheckController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HeathCheckController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HeathCheckController.cs",
+              "RelativeToolTip": "Controllers\\HeathCheckController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T13:30:08.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DailSafetyCheckController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\DailSafetyCheckController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DailSafetyCheckController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\DailSafetyCheckController.cs",
+              "RelativeToolTip": "Controllers\\DailSafetyCheckController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T07:36:24.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuilderController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BuilderController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
+              "RelativeToolTip": "Controllers\\BuilderController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T08:34:48.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-23T13:28:40.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "db_builder.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_builder.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_builder.cs",
               "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_builder.cs",
               "RelativeToolTip": "..\\LAB.REPOSITORY\\db_builder.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAABMAAAAIAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAwHYAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T08:32:37.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SysUser.cs",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\SysUser.cs",
-              "RelativeDocumentMoniker": "..\\LAB.MODEL\\SysUser.cs",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\SysUser.cs",
-              "RelativeToolTip": "..\\LAB.MODEL\\SysUser.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAuwBkAAAAFAAAA",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAF8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:10:02.937Z",
+              "WhenOpened": "2024-06-23T13:30:32.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IDailySafetyCheckService.cs",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
-              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
-              "RelativeToolTip": "..\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwB4AAAA+AAAA",
+              "Title": "AcademyController.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\AcademyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AcademyController.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\AcademyController.cs",
+              "RelativeToolTip": "Controllers\\AcademyController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAwEkAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T07:31:21.059Z"
+              "WhenOpened": "2024-06-24T01:56:12.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "db_academy.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_academy.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_academy.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_academy.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_academy.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvygAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T01:56:28.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "db_semesteres.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_semesteres.cs",
+              "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_semesteres.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_semesteres.cs",
+              "RelativeToolTip": "..\\LAB.REPOSITORY\\db_semesteres.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwFoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:01:42.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "SemesteresServiceImp.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Semesteres\\SemesteresServiceImp.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Semesteres\\SemesteresServiceImp.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Semesteres\\SemesteresServiceImp.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Semesteres\\SemesteresServiceImp.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwEAAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:02:21.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ISemesteresService.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Semesteres\\ISemesteresService.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\Semesteres\\ISemesteresService.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\Semesteres\\ISemesteresService.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\Semesteres\\ISemesteresService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:02:59.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ConsulConfiguration.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\ConsulConfiguration.cs",
+              "RelativeDocumentMoniker": "ConsulConfiguration.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\ConsulConfiguration.cs",
+              "RelativeToolTip": "ConsulConfiguration.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T13:28:32.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "DailySafetyCheckServiceImp.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\DailySafetyCheck\\DailySafetyCheckServiceImp.cs",
               "RelativeDocumentMoniker": "..\\LAB.SERVERS\\DailySafetyCheck\\DailySafetyCheckServiceImp.cs",
@@ -138,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 21,
               "Title": "db_sysuser.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_sysuser.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_sysuser.cs",
@@ -146,12 +373,11 @@
               "RelativeToolTip": "..\\LAB.REPOSITORY\\db_sysuser.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAAAL0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T13:46:02.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T13:46:02.913Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "SysUserServiceImp.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
               "RelativeDocumentMoniker": "..\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
@@ -159,25 +385,47 @@
               "RelativeToolTip": "..\\LAB.SERVERS\\SysUser\\SysUserServiceImp.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAADwv20AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:10:11.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T17:10:11.167Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 27,
+              "Title": "IDailySafetyCheckService.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
+              "RelativeDocumentMoniker": "..\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
+              "RelativeToolTip": "..\\LAB.SERVERS\\DailySafetyCheck\\IDailySafetyCheckService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwB4AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T07:31:21.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "SysUserController.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SysUserController.cs",
               "RelativeDocumentMoniker": "Controllers\\SysUserController.cs",
               "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\SysUserController.cs",
               "RelativeToolTip": "Controllers\\SysUserController.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAQwKQAAAAcAAAA",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAmwKQAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:09:54.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T17:09:54.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 20,
+              "Title": "SysUser.cs",
+              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\SysUser.cs",
+              "RelativeDocumentMoniker": "..\\LAB.MODEL\\SysUser.cs",
+              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\SysUser.cs",
+              "RelativeToolTip": "..\\LAB.MODEL\\SysUser.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAuwBkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T17:10:02.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "ISysUserService.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
               "RelativeDocumentMoniker": "..\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
@@ -185,12 +433,11 @@
               "RelativeToolTip": "..\\LAB.SERVERS\\SysUser\\ISysUserService.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAqwBMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:10:14.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T17:10:14.861Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "db_dailySafetyCheck.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_dailySafetyCheck.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_dailySafetyCheck.cs",
@@ -198,12 +445,11 @@
               "RelativeToolTip": "..\\LAB.REPOSITORY\\db_dailySafetyCheck.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAA6wOQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:22:31.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T17:22:31.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 25,
               "Title": "DailySafetyCheck.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\DailySafetyCheck.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\DailySafetyCheck.cs",
@@ -215,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 28,
               "Title": "Laboratories.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\Laboratories.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\Laboratories.cs",
@@ -227,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 22,
               "Title": "SingleBuilding.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\SingleBuilding.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\SingleBuilding.cs",
@@ -235,37 +481,11 @@
               "RelativeToolTip": "..\\LAB.MODEL\\SingleBuilding.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAADwvwwAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T08:31:55.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T08:31:55.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BuilderController.cs",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BuilderController.cs",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\BuilderController.cs",
-              "RelativeToolTip": "Controllers\\BuilderController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAADwvykAAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T08:34:48.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DailSafetyCheckController.cs",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\DailSafetyCheckController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DailSafetyCheckController.cs",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\DailSafetyCheckController.cs",
-              "RelativeToolTip": "Controllers\\DailSafetyCheckController.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAwJIAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T07:36:24.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 26,
               "Title": "LabAssignments.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\LabAssignments.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\LabAssignments.cs",
@@ -277,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 31,
               "Title": "LabInclidentHanding.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\LabInclidentHanding.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\LabInclidentHanding.cs",
@@ -289,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "db_floor.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_floor.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_floor.cs",
@@ -301,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 30,
               "Title": "db_handing.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_handing.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_handing.cs",
@@ -313,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 29,
               "Title": "db_repairs.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.REPOSITORY\\db_repairs.cs",
               "RelativeDocumentMoniker": "..\\LAB.REPOSITORY\\db_repairs.cs",
@@ -325,19 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HandingController.cs",
-              "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HandingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HandingController.cs",
-              "ToolTip": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\HandingController.cs",
-              "RelativeToolTip": "Controllers\\HandingController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAADwvz8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:25:34.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "LabEquipmentRepairs.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\LabEquipmentRepairs.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\LabEquipmentRepairs.cs",
@@ -349,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "RepairsController.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MANAGE\\Controllers\\RepairsController.cs",
               "RelativeDocumentMoniker": "Controllers\\RepairsController.cs",
@@ -361,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 35,
               "Title": "UserRoles.cs",
               "DocumentMoniker": "D:\\git\\lab\\LABMANAGE\\\u540E\u7AEF\\LAB.MANAGE\\LAB.MODEL\\UserRoles.cs",
               "RelativeDocumentMoniker": "..\\LAB.MODEL\\UserRoles.cs",

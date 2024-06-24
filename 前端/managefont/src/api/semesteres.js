@@ -22,3 +22,10 @@ export function EditSemesteres(data) {
     data
   })
 }
+
+export function GetCheckList() {
+  return request({
+    url: '/Lab/Semesteres/GetCheckList',
+    method: 'get'
+  })
+}

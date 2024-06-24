@@ -22,7 +22,11 @@
           <el-tag>{{ scope.row.labNumber }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="repairDate" label="维修日期" />
+      <el-table-column prop="repairDate" label="维修日期">
+        <template slot-scope="scope">
+          {{ formatDate(scope.row.repairDate) }}
+        </template>
+      </el-table-column>
       <el-table-column prop="issuesFound" label="发现的问题" />
       <el-table-column prop="repairName" label="维修人员" />
       <el-table-column prop="completionStatus" label="完成状态">
@@ -102,6 +106,11 @@ export default {
       'roles',
       'uid'
     ])
+  },
+  watch: {
+    dialogAssign(newVal) {
+      this.initData()
+    }
   },
   mounted() {
     this.initData()
@@ -196,6 +205,16 @@ export default {
         })
         this.downloadLoading = false
       })
+    },
+    formatDate(dateString) {
+      const date = new Date(dateString)
+      const year = date.getFullYear()
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const day = String(date.getDate()).padStart(2, '0')
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+      const seconds = String(date.getSeconds()).padStart(2, '0')
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
     }
   }
 }

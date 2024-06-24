@@ -64,8 +64,8 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-link type="primary" style="margin-right:10px" @click="ClickAdd(scope.row)">添加实验室</el-link>
-          <el-link type="success" style="margin-right:10px" @click="ClickView(scope.row.id)">查看实验室</el-link>
+          <el-link type="primary" icon="el-icon-edit" style="margin-right:10px" @click="ClickAdd(scope.row)">添加实验室</el-link>
+          <el-link type="success" icon="el-icon-view" style="margin-right:10px" @click="ClickView(scope.row.id)">查看实验室</el-link>
         </template>
       </el-table-column>
 
@@ -155,6 +155,11 @@ export default {
         isDel: !item.isDel // 取反
       }))
       // return filtered
+    }
+  },
+  watch: {
+    dialogAdd(newVal) {
+      if (newVal === false) { this.InitData() }
     }
   },
   mounted() {

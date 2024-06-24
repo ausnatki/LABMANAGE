@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { GetList } from '@/api/academy.js'
+import { GetSelectCheckList } from '@/api/academy.js'
 import { GetRoleList, AddUser } from '@/api/user.js'
 export default {
   data() {
@@ -139,7 +139,7 @@ export default {
         console.error(response)
       })
 
-      await GetList().then(result => {
+      await GetSelectCheckList().then(result => {
         console.log(result)
         this.options = result.data
       }).catch(response => {

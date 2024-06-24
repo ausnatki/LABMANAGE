@@ -128,7 +128,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { GetList } from '@/api/semesteres.js'
+import { GetCheckList } from '@/api/semesteres.js'
 import { AddCheck } from '@/api/dailSafetyCheck.js'
 export default {
   props: {
@@ -216,7 +216,7 @@ export default {
       this.$refs[formName].resetFields()
     },
     async Initdata() {
-      await GetList().then(result => {
+      await GetCheckList().then(result => {
         this.semester = result.data.filter(item => !item.isDel)
       }).catch(response => {
         this.$message({

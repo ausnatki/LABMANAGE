@@ -12,5 +12,6 @@ namespace LAB.SERVERS
         public bool AddBuilder(LAB.MODEL.SingleBuilding singleBuilding);
         public bool EditBuilder(LAB.MODEL.SingleBuilding singleBuilding);
         public bool ChangeState(int BID);
+        public IEnumerable<object> GetCheckList();
     }
 }

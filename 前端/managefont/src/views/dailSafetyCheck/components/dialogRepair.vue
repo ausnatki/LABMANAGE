@@ -17,7 +17,11 @@
           <el-tag>{{ scope.row.labNumber }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="repairDate" label="维修日期" />
+      <el-table-column prop="repairDate" label="维修日期">
+        <template slot-scope="scope">
+          {{ formatDate(scope.row.repairDate) }}
+        </template>
+      </el-table-column>
       <el-table-column prop="issuesFound" label="发现的问题" />
       <el-table-column prop="repairName" label="维修人员" />
       <el-table-column prop="completionStatus" label="完成状态">

@@ -7,6 +7,13 @@ export function GetAllList() {
   })
 }
 
+export function GetCheckList() {
+  return request({
+    url: '/Lab/Builder/GetCheckList',
+    method: 'get'
+  })
+}
+
 export function AddBuilder(data) {
   return request({
     url: '/Lab/Builder/AddBuilder',

@@ -21,7 +21,7 @@
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary" @click="submitLabForm('labForm')">立即添加</el-button>
+        <el-button type="primary" @click="submitLabForm('labForm')">保存</el-button>
         <el-button @click="resetLabForm('labForm')">重置</el-button>
       </el-form-item>
     </el-form>

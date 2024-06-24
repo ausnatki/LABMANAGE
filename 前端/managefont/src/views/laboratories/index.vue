@@ -126,6 +126,13 @@ export default {
       }))
     }
   },
+  watch: {
+    dialogAssign(newVal) {
+      if (!newVal) {
+        this.loadData()
+      }
+    }
+  },
   mounted() {
     this.loadData()
   },

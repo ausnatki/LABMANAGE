@@ -49,7 +49,7 @@
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" :loading="EditButtonLoading" @click="onSubmit">立即创建</el-button>
+        <el-button type="primary" :loading="EditButtonLoading" @click="onSubmit">保存</el-button>
         <el-button @click="onCancel">取消</el-button>
       </el-form-item>
     </el-form>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { GetList } from '@/api/academy.js'
+import { GetSelectCheckList } from '@/api/academy.js'
 import { GetRoleList, EditUser } from '@/api/user.js'
 export default {
   props: {
@@ -137,7 +137,7 @@ export default {
         console.error(response)
       })
 
-      await GetList().then(result => {
+      await GetSelectCheckList().then(result => {
         console.log(result)
         this.options = result.data
       }).catch(response => {
