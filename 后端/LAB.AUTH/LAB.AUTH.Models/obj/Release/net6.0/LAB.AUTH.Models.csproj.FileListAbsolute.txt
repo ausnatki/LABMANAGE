@@ -1,0 +1,12 @@
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\bin\Release\net6.0\LAB.AUTH.Models.deps.json
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\bin\Release\net6.0\LAB.AUTH.Models.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\bin\Release\net6.0\LAB.AUTH.Models.pdb
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.AssemblyInfoInputs.cache
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.AssemblyInfo.cs
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.csproj.CoreCompileInputs.cache
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.sourcelink.json
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\refint\LAB.AUTH.Models.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\LAB.AUTH.Models.pdb
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.Models\obj\Release\net6.0\ref\LAB.AUTH.Models.dll

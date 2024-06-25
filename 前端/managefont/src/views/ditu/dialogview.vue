@@ -10,7 +10,7 @@
     </el-carousel>
     <div class="info-content">
       <p><strong>层数:</strong> {{ building.number }} 层</p>
-      <p><strong>启用状态:</strong> {{ building.isDel }}</p>
+      <p><strong>启用状态:</strong> {{ SateText(building.isDel) }}</p>
     </div>
     <template #footer>
       <span class="dialog-footer">
@@ -43,6 +43,9 @@ export default {
   methods: {
     closeCard() {
       this.$emit('close')
+    },
+    SateText(state) {
+      return state === true ? '弃用' : '启用'
     }
   }
 }

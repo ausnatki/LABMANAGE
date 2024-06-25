@@ -57,11 +57,13 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// 这里要配置 swagger 的话 必须溢出来
+app.UseSwagger();
+app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()) // 调试模式
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+  
 }
 
 app.UseHttpsRedirection();

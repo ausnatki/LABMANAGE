@@ -1,4 +1,5 @@
 ﻿using LAB.DB;
+using LAB.MODEL;
 using LAB.MODEL.DoTempClass;
 using LAB.REPOSITORY;
 using System;
@@ -120,6 +121,21 @@ namespace LAB.SERVERS
         }
         #endregion
 
+        #region 获取用户信息
+        public LAB.MODEL.SysUser GetUserInfo(int Id)
+        {
+            try 
+            { 
+                    var user = db_Sysuser.GetInfoByID(Id);
+                    if (user == null) return null;
+                    return user;
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+        #endregion
 
     }
 }

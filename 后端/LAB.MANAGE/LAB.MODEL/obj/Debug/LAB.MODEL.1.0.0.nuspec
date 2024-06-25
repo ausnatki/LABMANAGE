@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LAB.MODEL</id>
+    <version>1.0.0</version>
+    <authors>LAB.MODEL</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="4bfbf302e425afd75e3c9e1fb6fa15570d44f73a" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="6.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="6.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\git\lab\LABMANAGE\后端\LAB.MANAGE\LAB.MODEL\bin\Debug\net6.0\LAB.MODEL.dll" target="lib\net6.0\LAB.MODEL.dll" />
+  </files>
+</package>

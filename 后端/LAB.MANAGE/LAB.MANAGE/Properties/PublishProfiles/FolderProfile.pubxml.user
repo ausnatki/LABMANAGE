@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Success</_PublishTargetUrl>
+    <History>True|2024-06-24T14:45:50.2422058Z;True|2024-06-24T22:39:16.6714761+08:00;True|2024-06-24T20:57:55.2143229+08:00;True|2024-06-24T18:16:49.6282345+08:00;True|2024-06-24T18:10:10.6706603+08:00;True|2024-06-24T18:01:28.7516377+08:00;True|2024-06-24T17:09:00.3129862+08:00;True|2024-06-24T16:54:55.6151689+08:00;True|2024-06-24T16:40:01.1241893+08:00;True|2024-06-24T16:16:10.0207891+08:00;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="BooksDatabase">
+      <Value>Server=172.19.6.158,1433%3bDatabase=LABMANAGE%3bUser Id=sa%3bPassword=hyk2022.11.6%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

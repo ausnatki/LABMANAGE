@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-24T13:53:06.4188474Z;True|2024-06-24T21:50:02.1456787+08:00;True|2024-06-24T21:38:20.5117897+08:00;True|2024-06-24T21:29:44.8078971+08:00;True|2024-06-24T21:25:56.5287263+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="BooksDatabase">
+      <Value>Server=172.19.6.158,1433%3bDatabase=LABMANAGE%3bUser Id=sa%3bPassword=hyk2022.11.6%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

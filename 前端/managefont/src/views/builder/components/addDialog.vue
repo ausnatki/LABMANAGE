@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="添加楼层" :visible.sync="visible">
+  <el-dialog title="添加楼层" :visible="dialogVisible" @update:visible="updateVisible">
     <el-form :model="addForm">
       <el-form-item label="楼房名称" :label-width="formLabelWidth">
         <el-input v-model="addForm.name" />
@@ -45,6 +45,7 @@ export default {
         lng: '',
         lat: ''
       },
+      dialogVisible: this.visible, // 使用一个本地的 dialogVisible 来存储 visible 的值
       BMap: null,
       map: null,
       zoom: 22, // 地图放大缩小的值
@@ -55,6 +56,11 @@ export default {
       formLabelWidth: '120px'
     }
   },
+  watch: {
+    visible(newValue) {
+      this.dialogVisible = newValue // 监听 visible 的变化，同步到 dialogVisible
+    }
+  },
   methods: {
     submitAdd() {
       this.addForm.lat = (this.dragendPosition.lat).toString()
@@ -63,14 +69,22 @@ export default {
       this.addForm.name = ''
       this.addForm.number = 0
     },
+    updateVisible(newValue) {
+      this.$emit('update:visible', newValue) // 将修改后的值通过事件传递给父组件
+    },
     closeDialog() {
-      this.$emit('update:visible', false)
+      this.$emit('update:visible', false) // 关闭对话框
+      this.clearForm() // 清空表单数据
     },
     infoWindowClose() {
       this.show = false
     },
     infoWindowOpen() {
       this.show = true
+    },
+    clearForm() {
+      this.addForm.name = ''
+      this.addForm.number = 0
     },
     dragendClick(e) {
       console.log(e)

@@ -23,7 +23,12 @@
             type="datetime"
             value-format="yyyy-MM-ddTHH:mm:ssZ"
             placeholder="选择检查日期"
-          />
+            disabled
+          >
+            <template slot-scope="scope">
+              {{ formatDate(scope.row.CheckDate) }}
+            </template>
+          </el-date-picker>
         </el-form-item>
       </el-col>
       <el-col :span="12">
@@ -218,6 +223,7 @@ export default {
     async Initdata() {
       await GetCheckList().then(result => {
         this.semester = result.data.filter(item => !item.isDel)
+        this.getNowTime()
       }).catch(response => {
         this.$message({
           type: 'error',
@@ -227,6 +233,31 @@ export default {
         this.ruleForm.LabID = this.dialogdata.labID
         this.ruleForm.UID = this.uid
       })
+    },
+    formatDate(dateString) {
+      const date = new Date(dateString)
+      const year = date.getFullYear()
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const day = String(date.getDate()).padStart(2, '0')
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+      const seconds = String(date.getSeconds()).padStart(2, '0')
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    },
+    getNowTime() {
+      var now = new Date()
+      var year = now.getFullYear()
+      var month = now.getMonth() + 1
+      var date = now.getDate()
+      var hours = now.getHours()
+      var minutes = now.getMinutes()
+      var seconds = now.getSeconds()
+
+      // Format date to yyyy-MM-ddTHH:mm:ss
+      var isoDate = `${year}-${month.toString().padStart(2, '0')}-${date.toString().padStart(2, '0')}T${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
+      // Set repairDate in editData
+      this.$set(this.ruleForm, 'CheckDate', isoDate)
     }
   }
 }

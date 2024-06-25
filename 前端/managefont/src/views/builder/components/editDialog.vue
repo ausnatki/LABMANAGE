@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { EditBuilder } from '@/api/building'
+import { EditBuilder } from '@/api/building.js'
 
 export default {
   name: 'EditFloorDialog',
@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       addForm: {
+        id: '',
         name: '',
         number: 0,
         lng: '',

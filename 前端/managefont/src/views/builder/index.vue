@@ -35,7 +35,9 @@
     <el-pagination align="center" :current-page="currentPage" :page-sizes="[1, 5, 10, 20]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="tableData.length" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
 
     <!-- 添加楼层的对话框 -->
-    <AddFloorDialog :visible.sync="addDialogVisible" @submit="submitAdd" />
+    <template v-if="addDialogVisible">
+      <AddFloorDialog :visible.sync="addDialogVisible" @submit="submitAdd" />
+    </template>
 
     <!-- 修改楼层的弹出框 -->
     <el-dialog title="修改楼层" :visible.sync="editDialogVisible">

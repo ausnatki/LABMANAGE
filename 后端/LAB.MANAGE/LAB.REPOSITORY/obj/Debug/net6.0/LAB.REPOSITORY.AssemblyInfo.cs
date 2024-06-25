@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LAB.REPOSITORY")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e3e386b3c10c13be67d961e003f40b4f91621df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bfbf302e425afd75e3c9e1fb6fa15570d44f73a")]
 [assembly: System.Reflection.AssemblyProductAttribute("LAB.REPOSITORY")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LAB.REPOSITORY")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

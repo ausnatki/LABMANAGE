@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LAB.GETWAY")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5408eb13077e41615d9f07e900682440aec9373")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bfbf302e425afd75e3c9e1fb6fa15570d44f73a")]
 [assembly: System.Reflection.AssemblyProductAttribute("LAB.GETWAY")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LAB.GETWAY")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

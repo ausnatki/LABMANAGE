@@ -50,7 +50,7 @@ export default {
         incidentDetails: '',
         inclidentTime: '',
         semesters: '',
-        repairPersonnelID: ''
+        repairPersonnelID: null
       },
       isLoading: true,
       personnelList: [

@@ -188,7 +188,8 @@ export default {
         instrumentEquipmentIntact: item.instrumentEquipmentIntact ? '正常' : '异常',
         instrumentEquipmentWorking: item.instrumentEquipmentWorking ? '正常' : '异常',
         instrumentWarningLabelsIntact: item.instrumentWarningLabelsIntact ? '正常' : '异常',
-        otherSafetyHazards: item.otherSafetyHazards || '无',
+        otherSafetyHazards: item.otherSafetyHazards ? item.otherSafetyHazards : '无',
+        otherHazards: item.otherHazards ? item.otherHazards : '无',
         state: item.state ? '正常' : '异常'
       }))
       const category = this.serchCategory
@@ -217,13 +218,22 @@ export default {
         instrumentEquipmentIntact: item.instrumentEquipmentIntact ? '正常' : '异常',
         instrumentEquipmentWorking: item.instrumentEquipmentWorking ? '正常' : '异常',
         instrumentWarningLabelsIntact: item.instrumentWarningLabelsIntact ? '正常' : '异常',
-        otherSafetyHazards: item.otherSafetyHazards || '无',
+        otherSafetyHazards: item.otherSafetyHazards ? item.otherSafetyHazards : '无',
+        otherHazards: item.otherHazards ? item.otherHazards : '无',
         state: item.state ? '正常' : '异常'
       }))
-
+      const category = this.serchCategory
       const name = this.searchName.trim()
       if (name) {
         filtered = filtered.filter(item => item.labNumber.includes(name) || item.managerName.includes(name))
+      }
+
+      // console.log(filtered)
+      if (category.length) {
+        // console.log('进行我的类别查询')
+        filtered = filtered.filter(item => {
+          return category.includes(item.semester)
+        })
       }
 
       return filtered

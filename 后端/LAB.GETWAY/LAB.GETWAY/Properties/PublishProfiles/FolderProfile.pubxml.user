@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-24T15:04:03.4727823Z;True|2024-06-24T21:37:18.4518683+08:00;True|2024-06-24T21:28:59.3133651+08:00;True|2024-06-24T21:28:13.1987200+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

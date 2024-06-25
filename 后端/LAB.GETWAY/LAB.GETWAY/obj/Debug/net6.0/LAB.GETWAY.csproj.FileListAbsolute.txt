@@ -55,3 +55,5 @@ D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\obj\Debug\net6.0\refint\LAB.GE
 D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\obj\Debug\net6.0\LAB.GETWAY.pdb
 D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\obj\Debug\net6.0\LAB.GETWAY.genruntimeconfig.cache
 D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\obj\Debug\net6.0\ref\LAB.GETWAY.dll
+D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\bin\Debug\net6.0\LAB.GETWAY.xml
+D:\git\lab\LABMANAGE\后端\LAB.GETWAY\LAB.GETWAY\obj\Debug\net6.0\LAB.GETWAY.xml

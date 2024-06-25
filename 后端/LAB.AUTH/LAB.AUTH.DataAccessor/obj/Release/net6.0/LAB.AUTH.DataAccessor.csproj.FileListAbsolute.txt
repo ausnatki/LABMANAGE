@@ -1,0 +1,16 @@
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\bin\Release\net6.0\LAB.AUTH.DataAccessor.deps.json
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\bin\Release\net6.0\LAB.AUTH.DataAccessor.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\bin\Release\net6.0\LAB.AUTH.DataAccessor.pdb
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\bin\Release\net6.0\LAB.AUTH.Models.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\bin\Release\net6.0\LAB.AUTH.Models.pdb
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.csproj.AssemblyReference.cache
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.AssemblyInfoInputs.cache
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.AssemblyInfo.cs
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.csproj.CoreCompileInputs.cache
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.sourcelink.json
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.2373AB72.Up2Date
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\refint\LAB.AUTH.DataAccessor.dll
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\LAB.AUTH.DataAccessor.pdb
+D:\git\lab\LABMANAGE\后端\LAB.AUTH\LAB.AUTH.DataAccessor\obj\Release\net6.0\ref\LAB.AUTH.DataAccessor.dll

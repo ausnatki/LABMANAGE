@@ -203,5 +203,20 @@ namespace LAB.REPOSITORY
             }
         }
         #endregion
+
+        #region 获取单个用户的信息
+        public LAB.MODEL.SysUser GetInfoByID(int id)
+        {
+            try
+            {
+                var user = _ctx.SysUsers.Where(c => c.Id == id).FirstOrDefault();
+                return user;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }

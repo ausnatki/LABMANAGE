@@ -1,4 +1,5 @@
 ﻿using LAB.SERVERS;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StackExchange.Redis;
@@ -19,6 +20,43 @@ namespace LAB.MANAGE.Controllers
         {
             _service = service;
         }
+
+        [HttpPost("GetInfoById")]
+        public LAB.MODEL.ApiResp GetInfoById(int id)
+        {
+            var result = new LAB.MODEL.ApiResp();
+            if (id == 0)
+            {
+                result.Code = 500;
+                result.Data = null;
+                result.Result = false;
+                result.Msg = "查找失败，传值错误";
+                return result;
+            }
+            else
+            {
+                try
+                {
+                    var user = _service.GetUserInfo(id);
+                    result.Code = 20000;
+                    result.Data = user;
+                    result.Result = true;
+                    result.Msg = "查找成功";
+                    return result;
+                }
+                catch 
+                
+                {
+                    result.Code = 500;
+                    result.Data = null;
+                    result.Result = false;
+                    result.Msg = "查找失败，服务器错误";
+                    return result;
+                }
+
+            }
+        }
+
 
         /// <summary>
         /// 获取所有用户列表

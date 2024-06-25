@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 表格部分 -->
-    <el-button type="primary" @click="handleExportData">导出数据</el-button>
+
     <el-table
       v-loading="isLoading"
       :data="filteredData"

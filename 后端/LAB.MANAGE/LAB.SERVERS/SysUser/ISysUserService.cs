@@ -18,5 +18,7 @@ namespace LAB.SERVERS
         public IEnumerable<object> GetRepairs();
 
         public object GetDash();
+
+        public LAB.MODEL.SysUser GetUserInfo(int Id);
     }
 }

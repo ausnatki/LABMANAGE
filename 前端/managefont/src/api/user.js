@@ -75,6 +75,12 @@ export function GetDash() {
     method: 'get'
   })
 }
-
+export function GetInfoById(id) {
+  return request({
+    url: '/Lab/SysUser/GetInfoById',
+    method: 'post',
+    params: { id }
+  })
+}
 // AssignMent
 // GetByAcademy

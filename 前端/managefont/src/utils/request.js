@@ -6,9 +6,9 @@ import { getToken } from '@/utils/auth'
 // create an axios instance
 
 // 自己的接口
-// let baseURL = "https://localhost:7052"
+const baseURL = 'http://182.92.108.185:4093'
 // 跨域请求
-const baseURL = '/'
+// const baseURL = '/'
 
 const service = axios.create({
   // baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
